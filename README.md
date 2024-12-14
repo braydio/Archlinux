@@ -1,4 +1,4 @@
-# Arch Linux Installation Instructions
+# Arch Linux Installation
 
 Latest notes on Arch Linux install and setup process
 
