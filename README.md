@@ -1,6 +1,8 @@
 # Arch Linux Installation Instructions
 
-This guide provides steps for customizing and completing your Arch Linux system installation, focusing on the next steps after 6.
+Latest notes on Arch Linux install and setup process -
+[Note!]
+[full installation log at /archlog/](archlog/index.md)
 
 ---
 
@@ -25,6 +27,15 @@ To ensure Wayland functions properly, install the appropriate drivers for your s
    ```bash
    pacman -S xf86-video-intel
    ```
+2. **For AMD GPUs:**
+   ```bash
+   pacman -S xf86-video-amdgpu
+   ```
+3. **For NVIDIA GPUs:**
+   ```bash
+   pacman -S nvidia nvidia-utils
+   ```
+
 Additionally, ensure `mesa` is installed for OpenGL support:
 ```bash
 pacman -S mesa
@@ -105,7 +116,7 @@ Hyperland is a modern tiling Wayland compositor that provides a minimalist and e
      ```
 
 6. **Back Up Your Configuration:**
-   Save a copy of system’s configuration files:
+   Save a copy of your system’s configuration files:
    ```bash
    cp /etc/{hostname,locale.conf,fstab} ~/backup/
    ```
@@ -117,5 +128,4 @@ Hyperland is a modern tiling Wayland compositor that provides a minimalist and e
    ```
 
 ---
-
 
