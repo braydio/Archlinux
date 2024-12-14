@@ -1,149 +1,36 @@
 # Arch Linux Installation Instructions
 
-This guide now focuses on additional steps and packages to customize your system after installation. It shortens earlier steps for brevity since they are completed.
-
-**Note:** Your internal hard drive is identified as `mmcblk1`. The USB installation media is `sda`. Adjust all commands accordingly.
+This guide provides steps for customizing and completing your Arch Linux system installation, focusing on the next steps after 6.
 
 ---
 
 ## **1. Summary of Completed Steps**
 
-- **Partitions Created:**
-  - EFI partition (`/dev/mmcblk1p1`): 512MB, formatted as FAT32.
-  - Root partition (`/dev/mmcblk1p2`): Remaining disk space, formatted as ext4.
-
-- **Base System Installed:**
-  ```bash
-  pacstrap /mnt base linux linux-firmware
-  genfstab -U /mnt >> /mnt/etc/fstab
-  arch-chroot /mnt
-  ```
-
-- **Hostname, Locale, Timezone Configured:**
-  - `/etc/hostname` set to `archlinux`.
-  - `/etc/hosts` updated with loopback and hostname entries.
-  - Locale set to `en_US.UTF-8`.
-  - Timezone set and hardware clock synchronized.
-
-- **GRUB Bootloader Installed and Tested:**
-  GRUB was installed and configured. System rebooted successfully into Arch Linux.
+- **Partitions Created:** EFI and root partitions set up and formatted.
+- **Base System Installed:** Base packages and Linux kernel installed.
+- **Hostname, Locale, Timezone Configured:** System name, language, and time synchronized.
+- **GRUB Bootloader Installed and Tested:** GRUB successfully booted the system.
+- **`yay` Installed:** AUR helper configured for managing community-maintained packages.
+- **Network Configured:** NetworkManager enabled and Wi-Fi connected using `nmtui`.
+- **Audio Configured:** PipeWire and ALSA utilities installed for sound.
 
 ---
 
-## **2. Install Fonts**
+## **2. Install Hyperland (Wayland Compositor)**
 
-### Why Fonts?
-Fonts improve your system's visual appearance and support additional characters for various applications. If you want a **Minecraft-like theme**, or other options, here are some suggestions:
+### **Set Up Graphics Drivers** (Important for Wayland)
+To ensure Wayland functions properly, install the appropriate drivers for your system:
 
-### Recommended Fonts:
-1. **`ttf-dejavu`**:
-   - A standard font family for most systems. Already installed.
-
-2. **`ttf-fira-code`**:
-   - A popular monospaced font with ligatures, ideal for programming.
-
-3. **`ttf-cascadia-code`**:
-   - Another great programming font.
-
-4. **`ttf-minecraft`**:
-   - Adds a Minecraft-inspired aesthetic.
-
-### Install Fonts:
-Run the following to install these fonts:
+1. **For Intel GPUs:**
+   ```bash
+   pacman -S xf86-video-intel
+   ```
+Additionally, ensure `mesa` is installed for OpenGL support:
 ```bash
-pacman -S ttf-fira-code ttf-cascadia-code
-```
-If you want the Minecraft font, install it using an AUR helper like `yay`:
-```bash
-yay -S ttf-minecraft
+pacman -S mesa
 ```
 
----
-
-## **3. Install and Configure Audio**
-
-### Steps:
-1. Install `pipewire` and audio tools:
-   ```bash
-   pacman -S pipewire pipewire-pulse pipewire-alsa wireplumber
-   ```
-2. Enable the PipeWire service:
-   ```bash
-   systemctl --user enable --now pipewire.service
-   systemctl --user enable --now wireplumber.service
-   ```
-3. Test audio playback:
-   ```bash
-   speaker-test -t wav -c 2
-   ```
-
----
-
-## **4. Network Configuration with `nmtui`**
-
-### Why `nmtui`?
-`nmtui` is a simple terminal-based interface for managing network connections. It is especially useful for connecting to Wi-Fi networks during or after installation.
-
-### Steps:
-1. Install NetworkManager (if not already installed):
-   ```bash
-   pacman -S networkmanager
-   ```
-
-2. Enable and start the NetworkManager service:
-   ```bash
-   systemctl enable --now NetworkManager
-   ```
-
-3. Launch `nmtui` to configure your connection:
-   ```bash
-   nmtui
-   ```
-   - Select **Activate a Connection**.
-   - Choose your Wi-Fi network from the list and enter the password.
-
-4. Test the connection:
-   ```bash
-   ping -c 3 archlinux.org
-   ```
-
----
-
-## **5. Install `yay` (AUR Helper)**
-
-### Why `yay`?
-`yay` (Yet Another Yaourt) is an AUR helper that simplifies installing packages from the Arch User Repository (AUR). The AUR contains community-maintained packages not available in the official repositories.
-
-### Steps:
-1. Install prerequisites for building packages:
-   ```bash
-   pacman -S base-devel git
-   ```
-
-2. Clone the `yay` repository:
-   ```bash
-   git clone https://aur.archlinux.org/yay.git
-   ```
-
-3. Build and install `yay`:
-   ```bash
-   cd yay
-   makepkg -si
-   ```
-
-4. Test `yay`:
-   ```bash
-   yay --version
-   ```
-
-You can now use `yay` to install AUR packages like this:
-```bash
-yay -S package-name
-```
-
----
-
-## **6. Install Hyperland (Wayland Compositor)**
+Once drivers are installed, proceed to install Hyperland:
 
 ### Why Hyperland?
 Hyperland is a modern tiling Wayland compositor that provides a minimalist and efficient desktop experience.
@@ -166,43 +53,69 @@ Hyperland is a modern tiling Wayland compositor that provides a minimalist and e
 
 ---
 
-## **7. Final Steps and Customization**
+## **3. Next Steps and Customization**
 
-1. **Set Up a User Account**:
+1. **Create Additional Users:**
+   If needed, create additional user accounts:
    ```bash
-   useradd -m -G wheel -s /bin/bash your_username
-   passwd your_username
+   useradd -m -G wheel -s /bin/bash new_user
+   passwd new_user
    ```
-   Grant admin privileges:
+   Grant them sudo privileges:
    ```bash
    EDITOR=nano visudo
    ```
-   Uncomment:
-   ```
-   %wheel ALL=(ALL) ALL
-   ```
 
-2. **Install Additional Software**:
-   - File Manager:
+2. **Install Essential Applications:**
+   - **File Manager:**
      ```bash
      pacman -S thunar
      ```
-   - Web Browser:
+   - **Web Browser:**
      ```bash
      pacman -S firefox
      ```
-   - Resource Monitor:
+   - **System Monitor:**
      ```bash
      pacman -S btop
      ```
 
-3. **Reboot**:
-   Once everything is installed, reboot to ensure all configurations are applied:
+3. **Set Up Power Management:**
+   - For laptops, install `tlp`:
+     ```bash
+     pacman -S tlp
+     systemctl enable --now tlp
+     ```
+
+4. **Enhance Terminal Experience:**
+   - Install `neofetch` for system info:
+     ```bash
+     pacman -S neofetch
+     ```
+   - Install `exa` as an alternative to `ls`:
+     ```bash
+     pacman -S exa
+     ```
+
+5. **Customize Hyperland:**
+   - Configure Hyperland's `.conf` files to match your preferred keybindings, layout, and visuals.
+   - Consider installing themes or utilities like `rofi` or `waybar` for a polished look:
+     ```bash
+     pacman -S rofi waybar
+     ```
+
+6. **Back Up Your Configuration:**
+   Save a copy of system’s configuration files:
+   ```bash
+   cp /etc/{hostname,locale.conf,fstab} ~/backup/
+   ```
+
+7. **Reboot to Test Changes:**
+   Once everything is configured:
    ```bash
    reboot
    ```
 
 ---
 
-Feel free to add additional packages, themes, or configurations to personalize your system further!
 
