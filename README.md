@@ -1,8 +1,9 @@
 # Arch Linux Installation Instructions
 
-Latest notes on Arch Linux install and setup process -
-[Note!]
-[full installation log at /archlog/](archlog/index.md)
+Latest notes on Arch Linux install and setup process
+
+> [Note!] # how_to_!note?
+> [full installation log at /archlog/](archlog/index.md)
 
 ---
 
