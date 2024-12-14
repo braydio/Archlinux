@@ -1,42 +1,44 @@
-Steps 1-5: 
-# Arch Linux Installation Instructions
 
-This guide now focuses on additional steps and packages to customize your system after installation. It shortens earlier steps for brevity since they are completed.
+# Arch Linux Installation Log
 
-**Note:** Your internal hard drive is identified as `mmcblk1`. The USB installation media is `sda`. Adjust all commands accordingly.
+**Table of Contents:**
+1. [Summary of Completed Steps](#1-summary-of-completed-steps)
+2. [Install Fonts](#2-install-fonts)
+3. [Install and Configure Audio](#3-install-and-configure-audio)
+4. [Network Configuration with `nmtui`](#4-network-configuration-with-nmtui)
+5. [Install `yay` (AUR Helper)](#5-install-yay-aur-helper)
+6. [Install Hyperland (Wayland Compositor)](#6-install-hyperland-wayland-compositor)
+7. [Final Steps and Customization](#7-final-steps-and-customization)
 
 ---
 
 ## **1. Summary of Completed Steps**
 
-- **Partitions Created:**
+- **Partitions Created**:
   - EFI partition (`/dev/mmcblk1p1`): 512MB, formatted as FAT32.
   - Root partition (`/dev/mmcblk1p2`): Remaining disk space, formatted as ext4.
 
-- **Base System Installed:**
+- **Base System Installed**:
   ```bash
   pacstrap /mnt base linux linux-firmware
   genfstab -U /mnt >> /mnt/etc/fstab
   arch-chroot /mnt
   ```
 
-- **Hostname, Locale, Timezone Configured:**
+- **Hostname, Locale, Timezone Configured**:
   - `/etc/hostname` set to `archlinux`.
   - `/etc/hosts` updated with loopback and hostname entries.
   - Locale set to `en_US.UTF-8`.
   - Timezone set and hardware clock synchronized.
 
-- **GRUB Bootloader Installed and Tested:**
+- **GRUB Bootloader Installed and Tested**:
   GRUB was installed and configured. System rebooted successfully into Arch Linux.
 
 ---
 
 ## **2. Install Fonts**
 
-### Why Fonts?
-Fonts improve your system's visual appearance and support additional characters for various applications. If you want a **Minecraft-like theme**, or other options, here are some suggestions:
-
-### Recommended Fonts:
+### Some Fonts:
 1. **`ttf-dejavu`**:
    - A standard font family for most systems. Already installed.
 
@@ -171,7 +173,7 @@ yay -S package-name
 
 ## **6. Install Hyperland (Wayland Compositor)**
 
-### **Set Up Graphics Drivers** (Important for Wayland)
+### **Set Up Graphics Drivers**
 To ensure Wayland functions properly, install the appropriate drivers for your system:
 
 1. **For Intel GPUs:**
@@ -193,25 +195,6 @@ pacman -S mesa
 ```
 
 Once drivers are installed, proceed to install Hyperland:
-
-### Why Hyperland?
-Hyperland is a modern tiling Wayland compositor that provides a minimalist and efficient desktop experience.
-
-### Steps:
-1. Install dependencies:
-   ```bash
-   pacman -S wlroots wayland wayland-protocols
-   ```
-2. Use `yay` to install Hyperland:
-   ```bash
-   yay -S hyperland-git
-   ```
-3. Configure Hyperland:
-   - Follow the official [Hyperland Wiki](https://wiki.archlinux.org/title/Hyperland).
-   - Install a Wayland-compatible terminal like `alacritty`:
-     ```bash
-     pacman -S alacritty
-     ```
 
 ### Why Hyperland?
 Hyperland is a modern tiling Wayland compositor that provides a minimalist and efficient desktop experience.
@@ -271,6 +254,3 @@ Hyperland is a modern tiling Wayland compositor that provides a minimalist and e
    ```
 
 ---
-
-Feel free to add additional packages, themes, or configurations to personalize your system further!
-
