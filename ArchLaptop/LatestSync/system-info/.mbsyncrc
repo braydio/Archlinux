@@ -1,0 +1,48 @@
+# Global Options
+SyncState *  # Sync read/unread status and other IMAP metadata globally
+
+# IMAP Account Settings
+IMAPAccount gmail
+Host imap.gmail.com
+User chaffee.brayden@gmail.com
+Pass humuterkwxonvjgv 
+TLSType IMAPS
+AuthMechs LOGIN
+PipelineDepth 2  # Improves sync speed by allowing more parallel requests
+
+# Remote IMAP Store
+IMAPStore gmail-remote
+Account gmail
+
+# Local Maildir Store
+MaildirStore gmail-local
+Path ~/.mail/Gmail/
+Inbox ~/.mail/Gmail/Inbox/
+SubFolders Verbatim  # Ensures correct handling of Gmail's folder structure
+
+# Sync Channel for Main Inbox
+Channel gmail-main
+Far :gmail-remote:"INBOX"
+Near :gmail-local:"Inbox"
+Create Both
+Expunge Both
+Sync Pull
+
+Channel gmail-all
+Far :gmail-remote:"[Gmail]/All Mail"
+Near :gmail-local:"Inbox"
+Create Both
+Expunge Both
+Sync Pull
+
+Channel gmail-trash
+Far :gmail-remote:"[Gmail]/Trash"
+Near :gmail-local:"Trash"
+Patterns "[Gmail]/Trash"
+Create Both
+Expunge Both
+Sync Push  # Only push local deletions, do not pull
+
+# Group Gmail Channels
+Group gmail
+Channels gmail-main gmail-all gmail-trash

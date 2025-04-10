@@ -1,0 +1,13 @@
+[Default Applications]
+inode/chardevice=thunar.desktop
+application/octet-stream=vim.desktop
+application/zip=thunar.desktop
+application/vnd.appimage=com.mitchellh.ghostty.desktop
+
+[Added Associations]
+inode/chardevice=thunar.desktop;vim.desktop;
+application/octet-stream=vim.desktop;thunar.desktop;
+application/zip=thunar.desktop;file-roller.desktop;
+application/vnd.appimage=com.mitchellh.ghostty.desktop;
+image/jpeg=org.flameshot.Flameshot.desktop;
+image/png=firefox.desktop;org.flameshot.Flameshot.desktop;timeshift-gtk.desktop;

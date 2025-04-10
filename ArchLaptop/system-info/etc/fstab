@@ -1,0 +1,23 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/mmcblk0p2
+UUID=9a758e0d-bd97-491d-925a-0f5cac96ccba	/         	ext4      	rw,relatime	0 1
+
+# /dev/mmcblk0p1
+UUID=3249-4DBD      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# RAM Swapfile
+/swapfile none swap sw 0 0
+
+# Network Attached Storage
+192.168.1.239:/mnt/netstorage /mnt/netstorage nfs defaults,noatime 0 0
+
+# Shared drive from Desktop
+//192.168.1.68/Shared /home/braydenchaffee/mnt/windows-share cifs credentials=/home/braydenchaffee/.smbcredentials,rw,uid=1000,gid=1000,vers=3.0 0 0
+
+# Jellyfin Stuff
+//192.168.1.68/Jellyfin /home/braydenchaffee/mnt/TempMedia cifs credentials=/home/braydenchaffee/.smbcredentials,rw,uid=1000,gid=1000,vers=3.0 0 0
+
+
