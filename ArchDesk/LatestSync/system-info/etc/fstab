@@ -1,0 +1,20 @@
+# Static information about the filesystems.
+
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/nvme0n1p2
+UUID=270e2f37-b985-41de-9434-496c91e9c5a4	/         	ext4      	rw,relatime	0 1
+
+
+# # Storage at /dev/sda1
+UUID=5fd96714-309b-4770-8cbd-dd0f4ddd84af /mnt/netstorage xfs defaults,noatime 0 2
+
+# Export NAS Media
+
+
+# Windows Share
+//192.168.1.68/Shared /home/braydenchaffee/mnt/windows-share cifs credentials=/etc/smbcredentials/windows,uid=1000,gid=1000,iocharset=utf8 0 0
+
+# Windows Jellyfin
+
