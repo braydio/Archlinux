@@ -1028,7 +1028,6 @@ bluez-utils
 brightnessctl
 btop
 cellwriter
-chatgpt-desktop-bin
 cifs-utils
 cliphist
 cmake
@@ -1107,6 +1106,7 @@ nmap
 npm
 openssh
 openvpn
+pacman-contrib
 pamixer
 paru-bin
 patch
@@ -1207,13 +1207,12 @@ Machine:
   Mobo: LENOVO model: LNVNB161216 v: SDK0T76477 WIN
     serial: <superuser required> UEFI: LENOVO v: KKCN23WW date: 03/29/2024
 Battery:
-  ID-1: BAT0 charge: 36.6 Wh (89.5%) condition: 40.9/42.0 Wh (97.5%)
-    volts: 12.2 min: 11.2 model: Sunwoda L21D3PF0 status: discharging
-  Device-1: apple_mfi_fastcharge model: N/A charge: N/A status: N/A
+  ID-1: BAT0 charge: 24.4 Wh (59.7%) condition: 40.9/42.0 Wh (97.5%)
+    volts: 11.6 min: 11.2 model: Sunwoda L21D3PF0 status: discharging
 CPU:
   Info: dual core model: Intel Celeron N4020 bits: 64 type: MCP
     arch: Goldmont Plus rev: 8 cache: L1: 112 KiB L2: 4 MiB
-  Speed (MHz): avg: 1580 min/max: 800/2800 cores: 1: 1580 2: 1580
+  Speed (MHz): avg: 2686 min/max: 800/2800 cores: 1: 2686 2: 2686
     bogomips: 4377
   Flags: ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
 Graphics:
@@ -1252,33 +1251,33 @@ Network:
 Bluetooth:
   Device-1: Realtek Bluetooth Radio driver: btusb v: 0.8 type: USB
     bus-ID: 1-3:2
-  Report: btmgmt ID: hci0 rfk-id: 5 state: up address: <filter> bt-v: 5.2
+  Report: btmgmt ID: hci0 rfk-id: 9 state: up address: <filter> bt-v: 5.2
     lmp-v: 11
 Drives:
-  Local Storage: total: 116.5 GiB used: 86.01 GiB (73.8%)
+  Local Storage: total: 116.5 GiB used: 87.68 GiB (75.3%)
   ID-1: /dev/mmcblk1 model: MMC128 size: 116.5 GiB type: Removable
 Partition:
-  ID-1: / size: 113.62 GiB used: 85.85 GiB (75.6%) fs: ext4
+  ID-1: / size: 113.62 GiB used: 87.52 GiB (77.0%) fs: ext4
     dev: /dev/mmcblk1p2
-  ID-2: /boot size: 511 MiB used: 158 MiB (30.9%) fs: vfat
+  ID-2: /boot size: 511 MiB used: 158.3 MiB (31.0%) fs: vfat
     dev: /dev/mmcblk1p1
 Swap:
-  ID-1: swap-1 type: file size: 2 GiB used: 0 KiB (0.0%) file: /swapfile
-  ID-2: swap-2 type: zram size: 1.69 GiB used: 1.31 GiB (77.4%)
+  ID-1: swap-1 type: file size: 2 GiB used: 13.9 MiB (0.7%) file: /swapfile
+  ID-2: swap-2 type: zram size: 1.69 GiB used: 1.12 GiB (66.2%)
     dev: /dev/zram0
 Sensors:
-  System Temperatures: cpu: 37.0 C mobo: N/A
+  System Temperatures: cpu: 42.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Memory: total: 4 GiB note: est. available: 3.38 GiB used: 2.76 GiB (81.5%)
-  Processes: 233 Uptime: 2d 4h 55m Init: systemd
-  Packages: 1020 Compilers: gcc: 14.2.1 Shell: system-info.sh inxi: 3.3.37
+  Memory: total: 4 GiB note: est. available: 3.38 GiB used: 2.33 GiB (68.9%)
+  Processes: 227 Uptime: 2d 23h 7m Init: systemd
+  Packages: 1021 Compilers: gcc: 14.2.1 Shell: system-info.sh inxi: 3.3.37
 
 === Memory Information (free -h) ===
 
                total        used        free      shared  buff/cache   available
-Mem:           3.4Gi       2.7Gi       221Mi       491Mi       1.2Gi       657Mi
-Swap:          3.7Gi       1.3Gi       2.4Gi
+Mem:           3.4Gi       2.3Gi       347Mi       395Mi       1.4Gi       1.1Gi
+Swap:          3.7Gi       1.1Gi       2.6Gi
 
 === Disk Usage (df -h) ===
 
@@ -1286,10 +1285,10 @@ Filesystem      Size  Used Avail Use% Mounted on
 dev             1.7G     0  1.7G   0% /dev
 run             1.7G  1.6M  1.7G   1% /run
 efivarfs         16E     0 -5.1K   0% /sys/firmware/efi/efivars
-/dev/mmcblk1p2  114G   86G   22G  80% /
-tmpfs           1.7G  484K  1.7G   1% /dev/shm
+/dev/mmcblk1p2  114G   88G   21G  82% /
+tmpfs           1.7G  528K  1.7G   1% /dev/shm
 tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-tmpfs           1.7G  5.1M  1.7G   1% /tmp
+tmpfs           1.7G   13M  1.7G   1% /tmp
 /dev/mmcblk1p1  511M  159M  353M  31% /boot
 tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
 tmpfs           347M  4.1M  343M   2% /run/user/1000
@@ -1312,6 +1311,8 @@ MOZ_ENABLE_WAYLAND=1
 	insteadOf = https://github.com/
 [url "git@github"]
 	cominsteadOf = https://github.com/
+[pull]
+	rebase = true
 
 
 
@@ -1381,6 +1382,931 @@ application/zip=thunar.desktop;file-roller.desktop;
 application/vnd.appimage=com.mitchellh.ghostty.desktop;
 image/jpeg=org.flameshot.Flameshot.desktop;
 image/png=firefox.desktop;org.flameshot.Flameshot.desktop;timeshift-gtk.desktop;
+
+
+
+=== fast-cat.sh ===
+#!/bin/bash
+
+# Aggregates files and directories into a single concatenated file named ".fastcat.txt"
+# Uses `fastcat.txt` in the current directory if available; defaults to the current directory otherwise
+# Supports exclusion of files and directories specified in `nocat.txt`
+# Now includes a directory mapping and excludes unsupported file formats by default
+
+# Script metadata
+SCRIPT_NAME="Fast-Cat"
+SCRIPT_VERSION="1.8.0"
+
+# Print script name and version
+echo -e "\e[34m$SCRIPT_NAME - Version $SCRIPT_VERSION\e[0m"
+echo
+
+# Colors for output
+GREEN="\e[32m"
+RED="\e[31m"
+YELLOW="\e[33m"
+RESET="\e[0m"
+
+# Default settings
+DEFAULT_DIR=$(pwd)
+CONCAT_FILE_NAME=".fastcat.txt"
+FILELIST_NAME="fastcat.txt"
+EXCLUDE_FILE="nocat.txt"
+MAPPING_DEPTH=2
+
+TREE_MAP_PATH="$DEFAULT_DIR/.tree-map.txt"
+MAP_ONLY=false
+UNSUPPORTED_EXTENSIONS=("*.exe" "*.bin" "*.iso" "*.img" "*.mp4" "*.avi" "*.mkv" "*.mp3" "*.flac" "*.zip" "*.tar.gz" "*.rar")
+
+# Function to display help/usage
+show_help() {
+  echo "Aggregates files and directories into a single concatenated file named .fastcat.txt"
+  echo "Uses fastcat.txt in the current directory if available"
+  echo "Defaults to all (supported) files in the current directory otherwise"
+  echo "Supports exclusion of files and directories flagged or specified in nocat.txt"
+
+  echo "Usage: $0 [OPTIONS]"
+  echo ""
+  echo "Options:"
+  echo "  -h, --help            Display this help message and exit."
+  echo "  -d, --dir <dir>       Specify a target directory to process."
+  echo "  -f, --file <file>     Specify a file to be processed."
+  echo "  -m, --map-depth <n>   Set the directory tree map depth (default: 2)."
+  echo "  --map-only            Only generate the directory map."
+  exit 0
+}
+
+# Parse arguments
+TARGET_DIRS=()
+USE_FILELIST=false
+
+while [[ "$#" -gt 0 ]]; do
+  case $1 in
+  -h | --help) show_help ;;
+  -d | --dir)
+    TARGET_DIRS+=("$2")
+    shift
+    ;;
+  -f | --file)
+    TARGET_DIRS+=("$2")
+    shift
+    ;;
+  -m | --map-depth)
+    MAPPING_DEPTH="$2"
+    shift
+    ;;
+  --map-only) MAP_ONLY=true ;;
+  *)
+    echo -e "${RED}Unknown argument: $1${RESET}"
+    exit 1
+    ;;
+  esac
+  shift
+done
+
+# Use `fastcat.txt` if it exists and no flags are passed
+if [ -f "$DEFAULT_DIR/$FILELIST_NAME" ] && [ ${#TARGET_DIRS[@]} -eq 0 ]; then
+  echo -e "${YELLOW}Using filelist: $FILELIST_NAME${RESET}"
+  mapfile -t TARGET_DIRS <"$DEFAULT_DIR/$FILELIST_NAME"
+  USE_FILELIST=true
+fi
+
+# Default to current directory if no filelist and no flags
+if [ ${#TARGET_DIRS[@]} -eq 0 ]; then
+  echo -e "${YELLOW}No filelist -- $FILELIST_NAME or flags detected. Defaulting to current directory.${RESET}"
+  TARGET_DIRS+=("$DEFAULT_DIR")
+fi
+
+# Read exclude file if it exists
+EXCLUDE_LIST=()
+if [ -f "$DEFAULT_DIR/$EXCLUDE_FILE" ]; then
+  echo -e "${YELLOW}Using exclusion list: $EXCLUDE_FILE${RESET}"
+  mapfile -t EXCLUDE_LIST <"$DEFAULT_DIR/$EXCLUDE_FILE"
+fi
+
+# Expand wildcard exclusions from nocat.txt
+EXCLUDED_EXTENSIONS=()
+for EXCLUDE in "${EXCLUDE_LIST[@]}"; do
+  if [[ "$EXCLUDE" == *.* ]]; then
+    EXCLUDED_EXTENSIONS+=("*$EXCLUDE")
+  fi
+done
+
+# Merge default unsupported file formats with user-defined exclusions
+ALL_EXCLUDED_EXTENSIONS=("${UNSUPPORTED_EXTENSIONS[@]}" "${EXCLUDED_EXTENSIONS[@]}")
+
+# Notify user of concatenated file location
+CONCAT_FILE_PATH="$DEFAULT_DIR/$CONCAT_FILE_NAME"
+>"$CONCAT_FILE_PATH"
+
+# Display directory mapping
+echo -e "${GREEN}Directory Mapping:${RESET}"
+for DIR in "${TARGET_DIRS[@]}"; do
+  echo -e "  ${YELLOW}$DIR${RESET}"
+done
+echo ""
+
+# Function to check if a file or directory is excluded
+is_excluded() {
+  local ITEM="$1"
+  for EXCLUDED in "${EXCLUDE_LIST[@]}"; do
+    if [[ "$ITEM" == *"$EXCLUDED"* ]]; then
+      return 0
+    fi
+  done
+  for EXT in "${ALL_EXCLUDED_EXTENSIONS[@]}"; do
+    if [[ "$ITEM" == $EXT ]]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
+# Recursive function to print the directory tree
+print_tree() {
+  local DIR="$1"
+  local PREFIX="$2"
+  local DEPTH="$3"
+
+  if ((DEPTH > MAPPING_DEPTH)); then
+    return
+  fi
+
+  local ENTRIES=("$DIR"/*)
+  local TOTAL=${#ENTRIES[@]}
+  local COUNT=0
+
+  for ENTRY in "${ENTRIES[@]}"; do
+    ((COUNT++))
+    local CONNECTOR="├──"
+    local NEXT_PREFIX="$PREFIX│   "
+    if [ "$COUNT" -eq "$TOTAL" ]; then
+      CONNECTOR="└──"
+      NEXT_PREFIX="$PREFIX    "
+    fi
+
+    if [ -d "$ENTRY" ]; then
+      # Print to terminal with color
+      echo -e "${PREFIX}${CONNECTOR} ${YELLOW}$(basename "$ENTRY")${RESET}"
+      # Print to file without color
+      echo -e "${PREFIX}${CONNECTOR} $(basename "$ENTRY")" >>"$TREE_MAP_PATH"
+      print_tree "$ENTRY" "$NEXT_PREFIX" $((DEPTH + 1))
+    elif [ -f "$ENTRY" ]; then
+      echo -e "${PREFIX}${CONNECTOR} $(basename "$ENTRY")"
+      echo -e "${PREFIX}${CONNECTOR} $(basename "$ENTRY")" >>"$TREE_MAP_PATH"
+    fi
+  done
+}
+
+echo -e "${GREEN}Directory Tree Mapping (Depth: $MAPPING_DEPTH):${RESET}"
+echo "Directory Tree Mapping" >"$TREE_MAP_PATH"
+for DIR in "${TARGET_DIRS[@]}"; do
+  if [ -d "$DIR" ]; then
+    echo -e "${YELLOW}${DIR}${RESET}" | tee -a "$TREE_MAP_PATH"
+    print_tree "$DIR" "" 1
+  elif [ -f "$DIR" ]; then
+    echo -e "${YELLOW}File: $DIR${RESET}" | tee -a "$TREE_MAP_PATH"
+  else
+    echo -e "${RED}Invalid target: $DIR${RESET}" | tee -a "$TREE_MAP_PATH"
+  fi
+done
+echo ""
+
+if [ "$MAP_ONLY" = true ]; then
+  echo -e "${YELLOW}Map-only mode enabled. Skipping concatenation.${RESET}"
+  echo -e "${GREEN}Tree map saved to: $TREE_MAP_PATH${RESET}"
+  exit 0
+fi
+
+# Counters for success and failure
+success_count=0
+failure_count=0
+
+# Process each file or directory
+for TARGET in "${TARGET_DIRS[@]}"; do
+  TARGET=$(eval echo "$TARGET") # Expand variables or ~
+  if [ -d "$TARGET" ]; then
+    if is_excluded "$TARGET"; then
+      echo -e "${YELLOW}Skipping excluded directory: $TARGET${RESET}"
+      continue
+    fi
+    echo -e "${GREEN}Processing directory: $TARGET${RESET}"
+    for FILE in "$TARGET"/*; do
+      if [ -f "$FILE" ]; then
+        if is_excluded "$FILE"; then
+          echo -e "${YELLOW}Skipping excluded file: $FILE${RESET}"
+          continue
+        fi
+        echo "=== $(basename "$FILE") ===" >>"$CONCAT_FILE_PATH"
+        cat "$FILE" >>"$CONCAT_FILE_PATH" && echo -e "\n\n" >>"$CONCAT_FILE_PATH"
+        echo -e "${GREEN}Added $FILE to $CONCAT_FILE_NAME${RESET}"
+        ((success_count++))
+      fi
+    done
+  elif [ -f "$TARGET" ]; then
+    if is_excluded "$TARGET"; then
+      echo -e "${YELLOW}Skipping excluded file: $TARGET${RESET}"
+      continue
+    fi
+    echo -e "${GREEN}Processing file: $TARGET${RESET}"
+    echo "=== $(basename "$TARGET") ===" >>"$CONCAT_FILE_PATH"
+    cat "$TARGET" >>"$CONCAT_FILE_PATH" && echo -e "\n\n" >>"$CONCAT_FILE_PATH"
+    echo -e "${GREEN}Added $TARGET to $CONCAT_FILE_NAME${RESET}"
+    ((success_count++))
+  else
+    echo -e "${RED}Target not found: $TARGET${RESET}"
+    ((failure_count++))
+  fi
+done
+
+# Notify user of completion
+echo -e "${GREEN}Concatenation complete.${RESET}"
+echo -e "${GREEN}$success_count${RESET} files added, ${RED}$failure_count${RESET} targets failed."
+echo -e "${GREEN}Output saved to: $CONCAT_FILE_PATH${RESET}"
+
+# Copy the output file to the clipboard
+if command -v xclip &>/dev/null; then
+  xclip -selection clipboard <"$CONCAT_FILE_PATH"
+  echo -e "${GREEN}Copied .fastcat.txt to clipboard using xclip.${RESET}"
+elif command -v xsel &>/dev/null; then
+  xsel --clipboard <"$CONCAT_FILE_PATH"
+  echo -e "${GREEN}Copied .fastcat.txt to clipboard using xsel.${RESET}"
+else
+  echo -e "${YELLOW}Neither xclip nor xsel is installed. Cannot copy to clipboard.${RESET}"
+fi
+
+
+
+=== uncat.sh ===
+#!/bin/bash
+
+# Fast Un-Cat - Reconstructs individual files from .fastcat.txt
+SCRIPT_NAME="UnCat Fastcat"
+SCRIPT_VERSION="1.0.0"
+
+echo -e "\e[34m$SCRIPT_NAME - Version $SCRIPT_VERSION\e[0m\n"
+
+INPUT_FILE=".fastcat.txt"
+OUTPUT_DIR="./uncat_output"
+mkdir -p "$OUTPUT_DIR"
+
+if [[ ! -f "$INPUT_FILE" ]]; then
+  echo -e "\e[31mError: $INPUT_FILE not found in the current directory.\e[0m"
+  exit 1
+fi
+
+current_file=""
+success_count=0
+
+while IFS= read -r line; do
+  if [[ "$line" =~ ^===\ (.+)\ ===$ ]]; then
+    current_file="${BASH_REMATCH[1]}"
+    echo -e "\e[32mCreating file: $current_file\e[0m"
+    exec 3>"$OUTPUT_DIR/$current_file"
+    ((success_count++))
+  elif [[ -n "$current_file" ]]; then
+    echo "$line" >&3
+  fi
+done <"$INPUT_FILE"
+
+# Close the last file descriptor if open
+exec 3>&-
+
+echo -e "\n\e[32mUn-catenation complete.\e[0m"
+echo -e "\e[32mExtracted $success_count files to: $OUTPUT_DIR/\e[0m"
+
+
+
+=== gitcommit-alias.sh ===
+
+#!/bin/bash
+
+FILE="$1"
+
+if [ -z "$FILE" ]; then
+  echo "Usage: $0 <filename>"
+  exit 1
+fi
+
+if [ ! -f "$FILE" ]; then
+  echo "File '$FILE' does not exist."
+  exit 1
+fi
+
+BASENAME=$(basename "$FILE")
+
+# Fetch latest commit for the file
+LATEST_COMMIT_MSG=$(git log -1 --pretty=%s -- "$FILE")
+
+# Extract version number from commit message
+if [[ $LATEST_COMMIT_MSG =~ ([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
+  CURRENT_MAJOR=${BASH_REMATCH[1]}
+  CURRENT_MINOR=${BASH_REMATCH[2]}
+  CURRENT_PATCH=${BASH_REMATCH[3]}
+  CURRENT_MINOR=$((CURRENT_MINOR + 1))  # Increment minor (10th position)
+else
+  CURRENT_MAJOR=1
+  CURRENT_MINOR=0
+  CURRENT_PATCH=0
+fi
+
+NEW_VERSION="$CURRENT_MAJOR.$CURRENT_MINOR.$CURRENT_PATCH"
+DATE=$(date '+%Y-%m-%d')
+
+MESSAGE="$DATE - $BASENAME - v$CURRENT_MAJOR.$CURRENT_MINOR.$CURRENT_PATCH"
+
+git add "$FILE"
+git commit -m "$MESSAGE"
+git push
+
+echo "Committed and pushed '$FILE' as version v${CURRENT_MAJOR}.${CURRENT_MINOR}.${CURRENT_PATCH}"
+
+
+
+
+=== upload-gitcommit.sh ===
+
+#!/bin/bash
+
+# Backup system files to a Git directory for versioning
+# Repurposed from the FileAggredizer script
+
+# Script metadata
+SCRIPT_NAME="UpDotGit"
+SCRIPT_VERSION="1.0"
+
+# Print script name and version
+echo -e "\e[34m$SCRIPT_NAME - Version $SCRIPT_VERSION\e[0m"
+echo
+
+# Define directories
+GIT_BACKUP_DIR="$HOME/Uploads/Github/dotfiles"
+CONFIG_FILE="$HOME/Scripts/file-mgmt/dotgit-files.txt"
+LOG_FILE="$GIT_BACKUP_DIR/backup_failures.log"
+
+# Create Git backup directory if it doesn't exist
+mkdir -p "$GIT_BACKUP_DIR"
+
+# Initialize log file
+> "$LOG_FILE"
+
+# Check if the config file exists
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo -e "\e[31mError: Config file '$CONFIG_FILE' not found.\e[0m"
+    exit 1
+fi
+
+# Counters for success and failure
+success_count=0
+failure_count=0
+
+# Process each file or directory from the config file
+while IFS= read -r ENTRY; do
+    # Skip empty lines and comments
+    [[ -z "$ENTRY" || "$ENTRY" == \#* ]] && continue
+
+    # Expand tilde and variables
+    ENTRY=$(eval echo "$ENTRY")
+
+    # Validate the file or directory
+    if [ -f "$ENTRY" ]; then
+        DEST="$GIT_BACKUP_DIR/${ENTRY#$HOME/}"
+        mkdir -p "$(dirname "$DEST")"
+        if cp "$ENTRY" "$DEST" 2>/dev/null; then
+            echo -e "\e[32mCopied $ENTRY to $DEST\e[0m"
+            ((success_count++))
+        else
+            echo -e "\e[31mFailed to copy $ENTRY to $DEST\e[0m" | tee -a "$LOG_FILE"
+            ((failure_count++))
+        fi
+    elif [ -d "$ENTRY" ]; then
+        find -L "$ENTRY" -type f -print | while IFS= read -r FILE; do
+            DEST="$GIT_BACKUP_DIR/${FILE#$HOME/}"
+            mkdir -p "$(dirname "$DEST")"
+            if cp "$FILE" "$DEST" 2>/dev/null; then
+                echo -e "\e[32mCopied $FILE to $DEST\e[0m"
+                ((success_count++))
+            else
+                echo -e "\e[31mFailed to copy $FILE to $DEST\e[0m" | tee -a "$LOG_FILE"
+                ((failure_count++))
+            fi
+        done
+    else
+        echo -e "\e[33mFile or directory does not exist: $ENTRY\e[0m" | tee -a "$LOG_FILE"
+    fi
+done < "$CONFIG_FILE"
+
+# Notify user of completion
+echo -e "\e[32m$success_count files copied successfully.\e[0m"
+echo -e "\e[31m$failure_count files failed to copy.\e[0m"
+echo -e "\e[33mLog of failures saved at: $LOG_FILE\e[0m"
+
+# Commit changes
+cd "$GIT_BACKUP_DIR" || exit
+git add .
+git commit -m "UpDotGit Backup Saved on: $(date +"%Y-%m-%d %H:%M:%S")"
+echo -e "\e[32mChanges committed to Git.\e[0m"
+
+# Notify user
+echo -e "\e[32mBackup completed. Files are in $GIT_BACKUP_DIR.\e[0m"
+
+
+
+=== system-info.sh ===
+#!/bin/bash
+
+# Aggregates all files and directories listed in CONFIG_FILE to UPLOAD_DIR/system-info
+# Writes installed packages to ~/Documents/SystemInfo/pacman-installs.txt
+# Formats the consolidated file as Markdown with an index
+
+# Script metadata
+SCRIPT_NAME="System Info Collector ArchLaptop"
+SCRIPT_VERSION="2.4"
+
+# Print script name and version
+echo -e "\e[34m$SCRIPT_NAME - Version $SCRIPT_VERSION\e[0m"
+echo
+
+# Define directories
+UPLOAD_DIR="$HOME/Uploads/Archlinux/ArchLaptop/LatestSync/"
+SYSTEM_INFO_DIR="$UPLOAD_DIR/system-info"
+CONFIG_FILE="$HOME/Uploads/Archlinux/ArchLaptop/upload-files.txt"
+CONCAT_FILE="$UPLOAD_DIR/sys.txt"
+SYSFILES_MD="$UPLOAD_DIR/sys.md"
+LOG_FILE="$UPLOAD_DIR/copy_failures.log"
+
+# Create directories if they don't exist
+mkdir -p "$SYSTEM_INFO_DIR"
+
+# Colors for output
+GREEN="\e[32m"
+RED="\e[31m"
+YELLOW="\e[33m"
+RESET="\e[0m"
+
+# Clean the upload directory
+echo -e "${YELLOW}Cleaning upload directory: $UPLOAD_DIR...${RESET}"
+rm -rf "$UPLOAD_DIR"/*
+mkdir -p "$UPLOAD_DIR"
+echo -e "${GREEN}Upload directory cleaned.${RESET}"
+
+# Clean the system-info directory
+echo -e "${YELLOW}Cleaning system-info directory: $SYSTEM_INFO_DIR...${RESET}"
+rm -rf "$SYSTEM_INFO_DIR"/*
+mkdir -p "$SYSTEM_INFO_DIR"
+echo -e "${GREEN}System-info directory cleaned.${RESET}"
+
+# Initialize log file
+>"$LOG_FILE"
+
+# Save installed packages
+SYSTEM_INFO_FILE="$HOME/Documents/SystemInfo/pacman-installs.txt"
+echo -e "${YELLOW}Saving installed packages to $SYSTEM_INFO_FILE...${RESET}"
+if pacman -Qqe >"$SYSTEM_INFO_FILE" 2>/dev/null; then
+  echo -e "${GREEN}Installed packages saved to $SYSTEM_INFO_FILE${RESET}"
+else
+  echo -e "${RED}Failed to save installed packages.${RESET}"
+fi
+
+# Save system information to the same file
+echo -e "\n=== System Information (inxi -Fxz) ===\n" >>"$SYSTEM_INFO_FILE"
+inxi -Fxz >>"$SYSTEM_INFO_FILE" 2>/dev/null
+
+echo -e "\n=== Memory Information (free -h) ===\n" >>"$SYSTEM_INFO_FILE"
+free -h >>"$SYSTEM_INFO_FILE"
+
+echo -e "\n=== Disk Usage (df -h) ===\n" >>"$SYSTEM_INFO_FILE"
+df -h >>"$SYSTEM_INFO_FILE"
+
+echo -e "\n=== Wayland Session Variables ===\n" >>"$SYSTEM_INFO_FILE"
+env | grep WAYLAND >>"$SYSTEM_INFO_FILE"
+
+# Check if the config file exists
+if [ ! -f "$CONFIG_FILE" ]; then
+  echo -e "${RED}Error: Config file '$CONFIG_FILE' not found.${RESET}"
+  exit 1
+fi
+
+# Counters for success and failure
+success_count=0
+failure_count=0
+
+# Start with empty files
+>"$CONCAT_FILE"
+>"$SYSFILES_MD"
+
+# Create Markdown header
+echo -e "# System Files\n\n## Index\n" >>"$SYSFILES_MD"
+
+# Process each file or directory from the config file
+section_counter=1
+while IFS= read -r ENTRY; do
+  # Skip empty lines and comments
+  [[ -z "$ENTRY" || "$ENTRY" == \#* ]] && continue
+
+  # Expand tilde and variables
+  ENTRY=$(eval echo "$ENTRY")
+
+  # Validate the file or directory
+  if [ -f "$ENTRY" ]; then
+    DEST="$SYSTEM_INFO_DIR/${ENTRY#$HOME/}"
+    mkdir -p "$(dirname "$DEST")"
+    if cp "$ENTRY" "$DEST" 2>/dev/null; then
+      echo -e "${GREEN}Copied $ENTRY to $DEST${RESET}"
+      ((success_count++))
+
+      # Add to the concatenated file
+      echo "=== $(basename "$ENTRY") ===" >>"$CONCAT_FILE"
+      cat "$ENTRY" >>"$CONCAT_FILE"
+      echo -e "\n\n" >>"$CONCAT_FILE"
+
+      # Add to Markdown file
+      section_title="$(basename "$ENTRY")"
+      anchor="section-$section_counter"
+      echo "- [$section_title](#$anchor)" >>"$SYSFILES_MD"
+      echo -e "\n## $section_title\n<a id=\"$anchor\"></a>\n" >>"$SYSFILES_MD"
+      cat "$ENTRY" >>"$SYSFILES_MD"
+      echo -e "\n\n" >>"$SYSFILES_MD"
+      ((section_counter++))
+    else
+      echo -e "${RED}Failed to copy $ENTRY to $DEST${RESET}" | tee -a "$LOG_FILE"
+      ((failure_count++))
+    fi
+  elif [ -d "$ENTRY" ]; then
+    find -L "$ENTRY" -type f -print | while IFS= read -r FILE; do
+      DEST="$SYSTEM_INFO_DIR/${FILE#$HOME/}"
+      mkdir -p "$(dirname "$DEST")"
+      if cp "$FILE" "$DEST" 2>/dev/null; then
+        echo -e "${GREEN}Copied $FILE to $DEST${RESET}"
+        ((success_count++))
+      else
+        echo -e "${RED}Failed to copy $FILE to $DEST${RESET}" | tee -a "$LOG_FILE"
+        ((failure_count++))
+      fi
+    done
+  else
+    echo -e "${YELLOW}File or directory does not exist: $ENTRY${RESET}" | tee -a "$LOG_FILE"
+  fi
+done <"$CONFIG_FILE"
+
+# Notify user of completion
+echo -e "${GREEN}Files gathered in $SYSTEM_INFO_DIR${RESET}"
+echo -e "${GREEN}$success_count${RESET}/$((success_count + failure_count)) files copied successfully, ${RED}$failure_count${RESET} failed."
+echo -e "${GREEN}Concatenated file created at: $CONCAT_FILE${RESET}"
+echo -e "${GREEN}Markdown file created at: $SYSFILES_MD${RESET}"
+echo -e "${YELLOW}Log of failures saved at: $LOG_FILE${RESET}"
+
+# Commented out this part for now
+# Open Dolphin to the upload directory
+# if command -v dolphin &>/dev/null; then
+#     dolphin "$UPLOAD_DIR" &
+# else
+#     echo -e "${YELLOW}Dolphin is not installed. Files are in $UPLOAD_DIR.${RESET}"
+# fi
+#
+# Open project folder in browser
+# if command -v xdg-open &>/dev/null; then
+#     echo -e "${YELLOW}Opening project page in browser...${RESET}"
+#     xdg-open "https://chatgpt.com/g/g-p-675e3fc315d481918227664d2b6bf82f-archlinux-install/project" &
+# else
+#     echo -e "${RED}Failed to open browser. Please visit https://chat.openai.com/${RESET}"
+# fi
+
+
+
+=== upload-files.txt ===
+/etc/fstab
+/etc/hostname
+/etc/hosts
+/etc/pacman.conf
+/etc/systemd/zram-generator.conf
+$HOME/.bashrc
+$HOME/.zshrc
+$HOME/.config/hypr/hyprland.conf
+$HOME/.config/waybar/config
+$HOME/.config/waybar/style.css
+$HOME/.config/libinput-gestures.conf
+$HOME/.config/environment.d/envvars.conf
+$HOME/.config/msmtmp/msmtmprc
+$HOME/.config/nvim/init.lua
+$HOME/.config/kitty/kitty.conf
+$HOME/.config/picom/picom.conf
+$HOME/Documents/SystemInfo/pacman-installs.txt
+$HOME/Documents/SystemInfo/installed-packages.log
+$HOME/.gitconfig
+$HOME/.mbsyncrc
+$HOME/.config/mimeapps.list
+$HOME/.config/user-dirs.dirs
+$HOME/.config/gtk-3.0/settings.ini
+DIR:$HOME/Scripts/file-mgmt
+DIR:$HOME/Scripts/file-mgmt/fast-cat.sh
+DIR:$HOME/Scripts/file-mgmt/uncat.sh
+DIR:$HOME/Scripts/file-mgmt/gitcommit-alias.sh
+DIR:$HOME/Scripts/file-mgmt/upload-gitcommit.sh
+DIR:$HOME/Scripts/file-mgmt/system-info.sh
+DIR:$HOME/Scripts/file-mgmt/upload-files.txt
+DIR:$HOME/Scripts/file-mgmt/upload-gitcommit.sh
+DIR:$HOME/Scripts/file-mgmt/quick-backup.sh
+DIR:$HOME/Scripts/file-mgmt/remote-file.sh
+DIR:$HOME/.config/systemd/user
+DIR:$HOME/.local/bin
+DIR:$HOME/.config/autostart
+
+
+
+
+=== upload-gitcommit.sh ===
+
+#!/bin/bash
+
+# Backup system files to a Git directory for versioning
+# Repurposed from the FileAggredizer script
+
+# Script metadata
+SCRIPT_NAME="UpDotGit"
+SCRIPT_VERSION="1.0"
+
+# Print script name and version
+echo -e "\e[34m$SCRIPT_NAME - Version $SCRIPT_VERSION\e[0m"
+echo
+
+# Define directories
+GIT_BACKUP_DIR="$HOME/Uploads/Github/dotfiles"
+CONFIG_FILE="$HOME/Scripts/file-mgmt/dotgit-files.txt"
+LOG_FILE="$GIT_BACKUP_DIR/backup_failures.log"
+
+# Create Git backup directory if it doesn't exist
+mkdir -p "$GIT_BACKUP_DIR"
+
+# Initialize log file
+> "$LOG_FILE"
+
+# Check if the config file exists
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo -e "\e[31mError: Config file '$CONFIG_FILE' not found.\e[0m"
+    exit 1
+fi
+
+# Counters for success and failure
+success_count=0
+failure_count=0
+
+# Process each file or directory from the config file
+while IFS= read -r ENTRY; do
+    # Skip empty lines and comments
+    [[ -z "$ENTRY" || "$ENTRY" == \#* ]] && continue
+
+    # Expand tilde and variables
+    ENTRY=$(eval echo "$ENTRY")
+
+    # Validate the file or directory
+    if [ -f "$ENTRY" ]; then
+        DEST="$GIT_BACKUP_DIR/${ENTRY#$HOME/}"
+        mkdir -p "$(dirname "$DEST")"
+        if cp "$ENTRY" "$DEST" 2>/dev/null; then
+            echo -e "\e[32mCopied $ENTRY to $DEST\e[0m"
+            ((success_count++))
+        else
+            echo -e "\e[31mFailed to copy $ENTRY to $DEST\e[0m" | tee -a "$LOG_FILE"
+            ((failure_count++))
+        fi
+    elif [ -d "$ENTRY" ]; then
+        find -L "$ENTRY" -type f -print | while IFS= read -r FILE; do
+            DEST="$GIT_BACKUP_DIR/${FILE#$HOME/}"
+            mkdir -p "$(dirname "$DEST")"
+            if cp "$FILE" "$DEST" 2>/dev/null; then
+                echo -e "\e[32mCopied $FILE to $DEST\e[0m"
+                ((success_count++))
+            else
+                echo -e "\e[31mFailed to copy $FILE to $DEST\e[0m" | tee -a "$LOG_FILE"
+                ((failure_count++))
+            fi
+        done
+    else
+        echo -e "\e[33mFile or directory does not exist: $ENTRY\e[0m" | tee -a "$LOG_FILE"
+    fi
+done < "$CONFIG_FILE"
+
+# Notify user of completion
+echo -e "\e[32m$success_count files copied successfully.\e[0m"
+echo -e "\e[31m$failure_count files failed to copy.\e[0m"
+echo -e "\e[33mLog of failures saved at: $LOG_FILE\e[0m"
+
+# Commit changes
+cd "$GIT_BACKUP_DIR" || exit
+git add .
+git commit -m "UpDotGit Backup Saved on: $(date +"%Y-%m-%d %H:%M:%S")"
+echo -e "\e[32mChanges committed to Git.\e[0m"
+
+# Notify user
+echo -e "\e[32mBackup completed. Files are in $GIT_BACKUP_DIR.\e[0m"
+
+
+
+=== quick-backup.sh ===
+
+#!/bin/bash
+
+# Default backup directory
+BACKUP_DIR="${PWD}/backups"
+mkdir -p "$BACKUP_DIR"
+
+# Function to create a backup
+backup_file() {
+    # Determine the file to back up
+    if [ $# -eq 0 ]; then
+        # Find all files in the current directory
+        FILES=($(find . -maxdepth 1 -type f))
+        FILE_COUNT=${#FILES[@]}
+
+        if [ $FILE_COUNT -eq 0 ]; then
+            echo "Error: No files found in the current directory to back up."
+            exit 1
+        elif [ $FILE_COUNT -eq 1 ]; then
+            FILE="${FILES[0]}"
+        else
+            # Use fuzzy finder for multiple files
+            echo "Select a file to back up:"
+            if command -v fzf &>/dev/null; then
+                FILE=$(printf "%s\n" "${FILES[@]}" | fzf)
+            else
+                echo "Error: Multiple files found. Install 'fzf' for easy selection."
+                exit 1
+            fi
+        fi
+    elif [ $# -eq 1 ]; then
+        FILE=$1
+    else
+        echo "Usage: quickbackup [file]"
+        exit 1
+    fi
+
+    # Ensure the file exists
+    if [ ! -f "$FILE" ]; then
+        echo "Error: File '$FILE' does not exist."
+        exit 1
+    fi
+
+    # Simplified filenames for backups
+    FILENAME=$(basename "$FILE")
+    BACKUP_PREFIX="${BACKUP_DIR}/${FILENAME}"
+    BACKUPS=("$BACKUP_PREFIX".*)
+
+    # Remove the oldest backup if more than 2 exist
+    if [ ${#BACKUPS[@]} -gt 1 ]; then
+        OLDEST_BACKUP=$(ls -t "${BACKUPS[@]}" 2>/dev/null | tail -n 1)
+        rm -f "$OLDEST_BACKUP"
+    fi
+
+    # Determine the next available version
+    NEXT_VERSION=$(($(ls "${BACKUP_PREFIX}".* 2>/dev/null | wc -l) + 1))
+
+    # Save the backup
+    BACKUP_FILE="${BACKUP_PREFIX}.${NEXT_VERSION}"
+    cp "$FILE" "$BACKUP_FILE"
+    echo "Backup for '$FILE' created as '$BACKUP_FILE'."
+}
+
+# Function to restore a backup
+restore_backup() {
+    if [ ! -d "$BACKUP_DIR" ]; then
+        echo "Error: Backup directory $BACKUP_DIR does not exist."
+        exit 1
+    fi
+
+    BACKUPS=("$BACKUP_DIR"/*)
+
+    if [ ${#BACKUPS[@]} -eq 0 ]; then
+        echo "Error: No backup files found in $BACKUP_DIR."
+        exit 1
+    elif [ ${#BACKUPS[@]} -eq 1 ]; then
+        SELECTED_BACKUP="${BACKUPS[0]}"
+    else
+        echo "Select a backup to restore:"
+        if command -v fzf &>/dev/null; then
+            SELECTED_BACKUP=$(printf "%s\n" "${BACKUPS[@]}" | fzf)
+        else
+            echo "Error: Multiple backups found. Install 'fzf' for easy selection."
+            exit 1
+        fi
+    fi
+
+    if [ -n "$SELECTED_BACKUP" ]; then
+        RESTORED_FILE=$(basename "${SELECTED_BACKUP}" | sed 's/\.[0-9]*$//')
+        cp "$SELECTED_BACKUP" "$RESTORED_FILE"
+        echo "Backup restored as '$RESTORED_FILE'."
+    else
+        echo "No backup selected. Restore operation canceled."
+        exit 1
+    fi
+}
+
+# Main script logic
+case "$1" in
+    -r)
+        restore_backup
+        ;;
+    *)
+        backup_file "$@"
+        ;;
+esac
+
+
+
+=== remote-file.sh ===
+#!/bin/bash
+
+# Usage: ./remote-file.sh get|send [-s server] [-src source_path] [-dst destination_path]
+
+# Default paths
+DEFAULT_SRC_PATH="/home/braydenchaffee/Uploads/Source/"
+DEFAULT_DST_PATH="/home/braydenchaffee/Downloads/Fetch/"
+
+# Initialize variables
+ACTION=""
+SRC_PATH="$DEFAULT_SRC_PATH"
+DST_PATH="$DEFAULT_DST_PATH"
+SELECTED_SERVER=""
+PASSWORD=""
+
+# Remote server credentials
+SERVERS=(
+  "192.168.1.85:Raspberry Pi 4:03231997:braydenchaffee"
+  "192.168.1.78:Pi Zero W:03231997:braydenchaffee"
+  "192.168.1.225:MacBook Pro:braydenchaffee"
+  "192.168.1.227:Archlinux Laptop:0323:braydenchaffee"
+)
+
+# Function to display usage
+usage() {
+  echo "Usage: $0 get|send [-s server] [-src source_path] [-dst destination_path]"
+  exit 1
+}
+
+# Parse arguments
+while [[ "$#" -gt 0 ]]; do
+  case "$1" in
+  get | send)
+    ACTION="$1"
+    ;;
+  -s | --server)
+    SELECTED_SERVER="$2"
+    shift
+    ;;
+  -src | --source)
+    SRC_PATH="$2"
+    shift
+    ;;
+  -dst | --destination)
+    DST_PATH="$2"
+    shift
+    ;;
+  *)
+    echo "Unknown option: $1"
+    usage
+    ;;
+  esac
+  shift
+done
+
+# Validate action
+if [[ -z "$ACTION" ]]; then
+  echo "Error: You must specify an action (get or send)."
+  usage
+fi
+
+# Prompt user to select a server if none provided
+if [[ -z "$SELECTED_SERVER" ]]; then
+  echo "Select the server:"
+  select SERVER_INFO in "${SERVERS[@]}"; do
+    if [[ -n "$SERVER_INFO" ]]; then
+      SELECTED_SERVER="$SERVER_INFO"
+      break
+    else
+      echo "Invalid selection."
+    fi
+  done
+fi
+
+# Extract server details
+SERVER=$(echo "$SELECTED_SERVER" | cut -d':' -f1)
+DEVICE=$(echo "$SELECTED_SERVER" | cut -d':' -f2)
+PASSWORD=$(echo "$SELECTED_SERVER" | cut -d':' -f3)
+USER=$(echo "$SELECTED_SERVER" | cut -d':' -f4)
+
+echo "Selected server: $DEVICE ($SERVER)"
+
+# Perform the action
+if [[ "$ACTION" == "get" ]]; then
+  echo "Fetching file from $DEVICE..."
+  sshpass -p "$PASSWORD" scp "$USER@$SERVER:$SRC_PATH" "$DST_PATH"
+elif [[ "$ACTION" == "send" ]]; then
+  echo "Sending file to $DEVICE..."
+  sshpass -p "$PASSWORD" scp "$SRC_PATH" "$USER@$SERVER:$DST_PATH"
+else
+  echo "Invalid action. Use 'get' or 'send'."
+  exit 1
+fi
 
 
 

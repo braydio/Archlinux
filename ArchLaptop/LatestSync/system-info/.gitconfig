@@ -8,3 +8,5 @@
 	insteadOf = https://github.com/
 [url "git@github"]
 	cominsteadOf = https://github.com/
+[pull]
+	rebase = true
