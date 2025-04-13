@@ -56,7 +56,6 @@ mopidy
 mopidy-iris
 mopidy-local
 mopidy-scrobbler
-mopidy-youtube
 mpv
 msmtp
 nano
@@ -144,9 +143,9 @@ Machine:
 CPU:
   Info: 8-core model: AMD Ryzen 7 5700X bits: 64 type: MT MCP arch: Zen 3+
     rev: 2 cache: L1: 512 KiB L2: 4 MiB L3: 32 MiB
-  Speed (MHz): avg: 1740 min/max: 550/4663 boost: enabled cores: 1: 1740
-    2: 1740 3: 1740 4: 1740 5: 1740 6: 1740 7: 1740 8: 1740 9: 1740 10: 1740
-    11: 1740 12: 1740 13: 1740 14: 1740 15: 1740 16: 1740 bogomips: 108597
+  Speed (MHz): avg: 3593 min/max: 550/4663 boost: enabled cores: 1: 3593
+    2: 3593 3: 3593 4: 3593 5: 3593 6: 3593 7: 3593 8: 3593 9: 3593 10: 3593
+    11: 3593 12: 3593 13: 3593 14: 3593 15: 3593 16: 3593 bogomips: 108597
   Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
 Graphics:
   Device-1: NVIDIA TU116 [GeForce GTX 1650 SUPER] vendor: Gigabyte
@@ -205,28 +204,28 @@ Bluetooth:
   Report: btmgmt ID: hci0 rfk-id: 0 state: up address: <filter> bt-v: 5.3
     lmp-v: 12
 Drives:
-  Local Storage: total: 11.82 TiB used: 731.61 GiB (6.0%)
+  Local Storage: total: 11.82 TiB used: 733.74 GiB (6.1%)
   ID-1: /dev/nvme0n1 vendor: Samsung model: SSD 990 EVO Plus 1TB
-    size: 931.51 GiB temp: 43.9 C
+    size: 931.51 GiB temp: 41.9 C
   ID-2: /dev/sda vendor: Seagate model: ST12000VN0007-2GS116 size: 10.91 TiB
 Partition:
-  ID-1: / size: 915.32 GiB used: 449.9 GiB (49.2%) fs: ext4
+  ID-1: / size: 915.32 GiB used: 452.03 GiB (49.4%) fs: ext4
     dev: /dev/nvme0n1p2
 Swap:
   Alert: No swap data was found.
 Sensors:
-  System Temperatures: cpu: 46.1 C mobo: 35.0 C
+  System Temperatures: cpu: 46.8 C mobo: 34.0 C
   Fan Speeds (rpm): N/A
 Info:
-  Memory: total: 32 GiB available: 31.26 GiB used: 11.62 GiB (37.2%)
-  Processes: 646 Uptime: 4d 8m Init: systemd
-  Packages: 930 Compilers: clang: 19.1.7 gcc: 14.2.1 Shell: upload-sysfiles
+  Memory: total: 32 GiB available: 31.26 GiB used: 11.31 GiB (36.2%)
+  Processes: 641 Uptime: 4d 2h 27m Init: systemd
+  Packages: 924 Compilers: clang: 19.1.7 gcc: 14.2.1 Shell: upload-sysfiles
     inxi: 3.3.37
 
 === Memory Information (free -h) ===
 
                total        used        free      shared  buff/cache   available
-Mem:            31Gi        11Gi       570Mi        74Mi        19Gi        19Gi
+Mem:            31Gi        11Gi       756Mi        75Mi        19Gi        19Gi
 Swap:             0B          0B          0B
 
 === Disk Usage (df -h) ===
@@ -235,7 +234,7 @@ Filesystem             Size  Used Avail Use% Mounted on
 dev                     16G     0   16G   0% /dev
 run                     16G  1.7M   16G   1% /run
 efivarfs               128K   15K  109K  12% /sys/firmware/efi/efivars
-/dev/nvme0n1p2         916G  450G  419G  52% /
+/dev/nvme0n1p2         916G  453G  417G  53% /
 tmpfs                   16G  344K   16G   1% /dev/shm
 tmpfs                   16G   11M   16G   1% /tmp
 tmpfs                  1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
