@@ -37,3 +37,4 @@ DIR:$HOME/.config/systemd/user/
 DIR:$HOME/.local/bin/
 DIR:$HOME/.config/autostart/
 
+DIR:$HOME/Projects/GPTMail

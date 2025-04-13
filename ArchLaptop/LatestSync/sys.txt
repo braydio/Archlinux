@@ -1207,12 +1207,12 @@ Machine:
   Mobo: LENOVO model: LNVNB161216 v: SDK0T76477 WIN
     serial: <superuser required> UEFI: LENOVO v: KKCN23WW date: 03/29/2024
 Battery:
-  ID-1: BAT0 charge: 24.4 Wh (59.7%) condition: 40.9/42.0 Wh (97.5%)
-    volts: 11.6 min: 11.2 model: Sunwoda L21D3PF0 status: discharging
+  ID-1: BAT0 charge: 22.2 Wh (54.3%) condition: 40.9/42.0 Wh (97.5%)
+    volts: 11.5 min: 11.2 model: Sunwoda L21D3PF0 status: discharging
 CPU:
   Info: dual core model: Intel Celeron N4020 bits: 64 type: MCP
     arch: Goldmont Plus rev: 8 cache: L1: 112 KiB L2: 4 MiB
-  Speed (MHz): avg: 2686 min/max: 800/2800 cores: 1: 2686 2: 2686
+  Speed (MHz): avg: 800 min/max: 800/2800 cores: 1: 800 2: 800
     bogomips: 4377
   Flags: ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
 Graphics:
@@ -1257,26 +1257,26 @@ Drives:
   Local Storage: total: 116.5 GiB used: 87.68 GiB (75.3%)
   ID-1: /dev/mmcblk1 model: MMC128 size: 116.5 GiB type: Removable
 Partition:
-  ID-1: / size: 113.62 GiB used: 87.52 GiB (77.0%) fs: ext4
+  ID-1: / size: 113.62 GiB used: 87.53 GiB (77.0%) fs: ext4
     dev: /dev/mmcblk1p2
   ID-2: /boot size: 511 MiB used: 158.3 MiB (31.0%) fs: vfat
     dev: /dev/mmcblk1p1
 Swap:
-  ID-1: swap-1 type: file size: 2 GiB used: 13.9 MiB (0.7%) file: /swapfile
-  ID-2: swap-2 type: zram size: 1.69 GiB used: 1.12 GiB (66.2%)
+  ID-1: swap-1 type: file size: 2 GiB used: 13.8 MiB (0.7%) file: /swapfile
+  ID-2: swap-2 type: zram size: 1.69 GiB used: 1.11 GiB (65.8%)
     dev: /dev/zram0
 Sensors:
-  System Temperatures: cpu: 42.0 C mobo: N/A
+  System Temperatures: cpu: 43.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Memory: total: 4 GiB note: est. available: 3.38 GiB used: 2.33 GiB (68.9%)
-  Processes: 227 Uptime: 2d 23h 7m Init: systemd
+  Memory: total: 4 GiB note: est. available: 3.38 GiB used: 2.19 GiB (64.7%)
+  Processes: 225 Uptime: 2d 23h 35m Init: systemd
   Packages: 1021 Compilers: gcc: 14.2.1 Shell: system-info.sh inxi: 3.3.37
 
 === Memory Information (free -h) ===
 
                total        used        free      shared  buff/cache   available
-Mem:           3.4Gi       2.3Gi       347Mi       395Mi       1.4Gi       1.1Gi
+Mem:           3.4Gi       2.2Gi       431Mi       343Mi       1.4Gi       1.2Gi
 Swap:          3.7Gi       1.1Gi       2.6Gi
 
 === Disk Usage (df -h) ===
@@ -1933,17 +1933,18 @@ while IFS= read -r ENTRY; do
       ((failure_count++))
     fi
   elif [ -d "$ENTRY" ]; then
-    find -L "$ENTRY" -type f -print | while IFS= read -r FILE; do
+    while IFS= read -r -d '' FILE; do
       DEST="$SYSTEM_INFO_DIR/${FILE#$HOME/}"
       mkdir -p "$(dirname "$DEST")"
-      if cp "$FILE" "$DEST" 2>/dev/null; then
+      if cp "$FILE" "$DEST"; then
         echo -e "${GREEN}Copied $FILE to $DEST${RESET}"
         ((success_count++))
       else
         echo -e "${RED}Failed to copy $FILE to $DEST${RESET}" | tee -a "$LOG_FILE"
         ((failure_count++))
       fi
-    done
+    done < <(find -L "$ENTRY" -type f -print0)
+
   else
     echo -e "${YELLOW}File or directory does not exist: $ENTRY${RESET}" | tee -a "$LOG_FILE"
   fi

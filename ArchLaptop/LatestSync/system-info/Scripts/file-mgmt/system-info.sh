@@ -118,17 +118,18 @@ while IFS= read -r ENTRY; do
       ((failure_count++))
     fi
   elif [ -d "$ENTRY" ]; then
-    find -L "$ENTRY" -type f -print | while IFS= read -r FILE; do
+    while IFS= read -r -d '' FILE; do
       DEST="$SYSTEM_INFO_DIR/${FILE#$HOME/}"
       mkdir -p "$(dirname "$DEST")"
-      if cp "$FILE" "$DEST" 2>/dev/null; then
+      if cp "$FILE" "$DEST"; then
         echo -e "${GREEN}Copied $FILE to $DEST${RESET}"
         ((success_count++))
       else
         echo -e "${RED}Failed to copy $FILE to $DEST${RESET}" | tee -a "$LOG_FILE"
         ((failure_count++))
       fi
-    done
+    done < <(find -L "$ENTRY" -type f -print0)
+
   else
     echo -e "${YELLOW}File or directory does not exist: $ENTRY${RESET}" | tee -a "$LOG_FILE"
   fi
