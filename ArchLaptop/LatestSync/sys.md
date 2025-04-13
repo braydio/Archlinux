@@ -1259,7 +1259,7 @@ zsh
 === System Information (inxi -Fxz) ===
 
 System:
-  Kernel: 6.13.8-arch1-1 arch: x86_64 bits: 64 compiler: gcc v: 14.2.1
+  Kernel: 6.14.1-arch1-1 arch: x86_64 bits: 64 compiler: gcc v: 14.2.1
   Desktop: Hyprland v: 0.48.1 Distro: Arch Linux
 Machine:
   Type: Laptop System: LENOVO product: 82V6 v: IdeaPad 1 14IGL7
@@ -1267,12 +1267,13 @@ Machine:
   Mobo: LENOVO model: LNVNB161216 v: SDK0T76477 WIN
     serial: <superuser required> UEFI: LENOVO v: KKCN23WW date: 03/29/2024
 Battery:
-  ID-1: BAT0 charge: 41.0 Wh (100.0%) condition: 41.0/42.0 Wh (97.6%)
-    volts: 12.8 min: 11.2 model: Sunwoda L21D3PF0 status: full
+  ID-1: BAT0 charge: 36.6 Wh (89.5%) condition: 40.9/42.0 Wh (97.5%)
+    volts: 12.2 min: 11.2 model: Sunwoda L21D3PF0 status: discharging
+  Device-1: apple_mfi_fastcharge model: N/A charge: N/A status: N/A
 CPU:
   Info: dual core model: Intel Celeron N4020 bits: 64 type: MCP
     arch: Goldmont Plus rev: 8 cache: L1: 112 KiB L2: 4 MiB
-  Speed (MHz): avg: 964 min/max: 800/2800 cores: 1: 964 2: 964
+  Speed (MHz): avg: 1580 min/max: 800/2800 cores: 1: 1580 2: 1580
     bogomips: 4377
   Flags: ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
 Graphics:
@@ -1288,7 +1289,7 @@ Graphics:
 Audio:
   Device-1: Intel Celeron/Pentium Silver Processor High Definition Audio
     vendor: Lenovo driver: snd_hda_intel v: kernel bus-ID: 00:0e.0
-  API: ALSA v: k6.13.8-arch1-1 status: kernel-api
+  API: ALSA v: k6.14.1-arch1-1 status: kernel-api
   Server-1: sndiod v: N/A status: off
   Server-2: PipeWire v: 1.4.1 status: active
 Network:
@@ -1302,59 +1303,56 @@ Network:
     mac: <filter>
   IF-ID-4: br-ed3f0d75a166 state: down mac: <filter>
   IF-ID-5: docker0 state: down mac: <filter>
-  IF-ID-6: veth7748306 state: up speed: 10000 Mbps duplex: full
+  IF-ID-6: veth1b27660 state: up speed: 10000 Mbps duplex: full
     mac: <filter>
-  IF-ID-7: vethb1c359b state: up speed: 10000 Mbps duplex: full
+  IF-ID-7: veth67cecef state: up speed: 10000 Mbps duplex: full
     mac: <filter>
-  IF-ID-8: vethe89ad19 state: up speed: 10000 Mbps duplex: full
+  IF-ID-8: vethf560f2e state: up speed: 10000 Mbps duplex: full
     mac: <filter>
 Bluetooth:
   Device-1: Realtek Bluetooth Radio driver: btusb v: 0.8 type: USB
     bus-ID: 1-3:2
-  Report: btmgmt ID: hci0 rfk-id: 4 state: up address: <filter> bt-v: 5.2
+  Report: btmgmt ID: hci0 rfk-id: 5 state: up address: <filter> bt-v: 5.2
     lmp-v: 11
 Drives:
-  Local Storage: total: 116.5 GiB used: 86.18 GiB (74.0%)
+  Local Storage: total: 116.5 GiB used: 86.01 GiB (73.8%)
   ID-1: /dev/mmcblk1 model: MMC128 size: 116.5 GiB type: Removable
 Partition:
-  ID-1: / size: 113.62 GiB used: 86.03 GiB (75.7%) fs: ext4
+  ID-1: / size: 113.62 GiB used: 85.85 GiB (75.6%) fs: ext4
     dev: /dev/mmcblk1p2
   ID-2: /boot size: 511 MiB used: 158 MiB (30.9%) fs: vfat
     dev: /dev/mmcblk1p1
 Swap:
-  ID-1: swap-1 type: file size: 2 GiB used: 397 MiB (19.4%) file: /swapfile
-  ID-2: swap-2 type: zram size: 1.69 GiB used: 959 MiB (55.4%)
+  ID-1: swap-1 type: file size: 2 GiB used: 0 KiB (0.0%) file: /swapfile
+  ID-2: swap-2 type: zram size: 1.69 GiB used: 1.31 GiB (77.4%)
     dev: /dev/zram0
 Sensors:
-  System Temperatures: cpu: 40.0 C mobo: N/A
+  System Temperatures: cpu: 37.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Memory: total: 4 GiB note: est. available: 3.38 GiB used: 2.4 GiB (70.9%)
-  Processes: 239 Uptime: 5d 16h 1m Init: systemd
+  Memory: total: 4 GiB note: est. available: 3.38 GiB used: 2.76 GiB (81.5%)
+  Processes: 233 Uptime: 2d 4h 55m Init: systemd
   Packages: 1020 Compilers: gcc: 14.2.1 Shell: system-info.sh inxi: 3.3.37
 
 === Memory Information (free -h) ===
 
                total        used        free      shared  buff/cache   available
-Mem:           3.4Gi       2.4Gi       260Mi       412Mi       1.4Gi       1.0Gi
+Mem:           3.4Gi       2.7Gi       221Mi       491Mi       1.2Gi       657Mi
 Swap:          3.7Gi       1.3Gi       2.4Gi
 
 === Disk Usage (df -h) ===
 
-Filesystem                     Size  Used Avail Use% Mounted on
-dev                            1.7G     0  1.7G   0% /dev
-run                            1.7G  1.6M  1.7G   1% /run
-efivarfs                        16E     0 -5.1K   0% /sys/firmware/efi/efivars
-/dev/mmcblk1p2                 114G   87G   22G  80% /
-tmpfs                          1.7G  528K  1.7G   1% /dev/shm
-tmpfs                          1.7G  5.1M  1.7G   1% /tmp
-/dev/mmcblk1p1                 511M  159M  353M  31% /boot
-//192.168.1.68/Shared          111G  106G  4.7G  96% /home/braydenchaffee/mnt/windows-share
-//192.168.1.68/Jellyfin        111G  106G  4.7G  96% /home/braydenchaffee/mnt/TempMedia
-192.168.1.239:/mnt/netstorage   11T  282G   11T   3% /mnt/netstorage
-tmpfs                          1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
-tmpfs                          347M  4.1M  343M   2% /run/user/1000
-tmpfs                          1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+Filesystem      Size  Used Avail Use% Mounted on
+dev             1.7G     0  1.7G   0% /dev
+run             1.7G  1.6M  1.7G   1% /run
+efivarfs         16E     0 -5.1K   0% /sys/firmware/efi/efivars
+/dev/mmcblk1p2  114G   86G   22G  80% /
+tmpfs           1.7G  484K  1.7G   1% /dev/shm
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs           1.7G  5.1M  1.7G   1% /tmp
+/dev/mmcblk1p1  511M  159M  353M  31% /boot
+tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs           347M  4.1M  343M   2% /run/user/1000
 
 === Wayland Session Variables ===
 
