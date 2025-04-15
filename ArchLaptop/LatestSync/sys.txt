@@ -1018,7 +1018,6 @@ bold_italic_font auto
 === pacman-installs.txt ===
 alsa-utils
 arp-scan
-barrier
 base
 base-devel
 bash-completion
@@ -1074,7 +1073,6 @@ hyprpaper
 hyprpicker
 hyprshot-git
 hyprsysteminfo
-i2pd
 imagemagick
 inxi
 isync
@@ -1199,99 +1197,123 @@ zsh
 === System Information (inxi -Fxz) ===
 
 System:
-  Kernel: 6.14.1-arch1-1 arch: x86_64 bits: 64 compiler: gcc v: 14.2.1
+  Kernel: 6.14.1-arch1-1 arch: x86_64 bits: 64
+    compiler: gcc v: 14.2.1
   Desktop: Hyprland v: 0.48.1 Distro: Arch Linux
 Machine:
-  Type: Laptop System: LENOVO product: 82V6 v: IdeaPad 1 14IGL7
-    serial: <superuser required>
-  Mobo: LENOVO model: LNVNB161216 v: SDK0T76477 WIN
-    serial: <superuser required> UEFI: LENOVO v: KKCN23WW date: 03/29/2024
+  Type: Laptop System: LENOVO product: 82V6
+    v: IdeaPad 1 14IGL7 serial: <superuser required>
+  Mobo: LENOVO model: LNVNB161216
+    v: SDK0T76477 WIN serial: <superuser required>
+    UEFI: LENOVO v: KKCN23WW date: 03/29/2024
 Battery:
-  ID-1: BAT0 charge: 22.2 Wh (54.3%) condition: 40.9/42.0 Wh (97.5%)
-    volts: 11.5 min: 11.2 model: Sunwoda L21D3PF0 status: discharging
+  ID-1: BAT0 charge: 40.9 Wh (100.0%)
+    condition: 40.9/42.0 Wh (97.3%) volts: 12.8
+    min: 11.2 model: Sunwoda L21D3PF0 status: full
 CPU:
-  Info: dual core model: Intel Celeron N4020 bits: 64 type: MCP
-    arch: Goldmont Plus rev: 8 cache: L1: 112 KiB L2: 4 MiB
-  Speed (MHz): avg: 800 min/max: 800/2800 cores: 1: 800 2: 800
-    bogomips: 4377
-  Flags: ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 ssse3 vmx
+  Info: dual core model: Intel Celeron N4020
+    bits: 64 type: MCP arch: Goldmont Plus rev: 8
+    cache: L1: 112 KiB L2: 4 MiB
+  Speed (MHz): avg: 2786 min/max: 800/2800 cores:
+    1: 2786 2: 2786 bogomips: 4377
+  Flags: ht lm nx pae sse sse2 sse3 sse4_1
+    sse4_2 ssse3 vmx
 Graphics:
-  Device-1: Intel GeminiLake [UHD Graphics 600] vendor: Lenovo driver: i915
-    v: kernel arch: Gen-9.5 bus-ID: 00:02.0
-  Device-2: IMC Networks Integrated Camera driver: uvcvideo type: USB
-    bus-ID: 1-7:3
-  Display: wayland server: X.org v: 1.21.1.16 with: Xwayland v: 24.1.6
-    compositor: Hyprland v: 0.48.1 driver: gpu: i915
-    resolution: no compositor data resolution: 1366x768
-  API: EGL Message: EGL data requires eglinfo. Check --recommends.
-  Info: Tools: wl: swaymsg,wayland-info x11: xprop
+  Device-1: Intel GeminiLake [UHD Graphics 600]
+    vendor: Lenovo driver: i915 v: kernel
+    arch: Gen-9.5 bus-ID: 00:02.0
+  Device-2: IMC Networks Integrated Camera
+    driver: uvcvideo type: USB bus-ID: 1-7:3
+  Display: wayland server: X.org v: 1.21.1.16
+    with: Xwayland v: 24.1.6 compositor: Hyprland
+    v: 0.48.1 driver: gpu: i915
+    resolution: no compositor data
+    resolution: 1366x768
+  API: EGL Message: EGL data requires eglinfo.
+    Check --recommends.
+  Info: Tools: wl: swaymsg,wayland-info
+    x11: xprop
 Audio:
-  Device-1: Intel Celeron/Pentium Silver Processor High Definition Audio
-    vendor: Lenovo driver: snd_hda_intel v: kernel bus-ID: 00:0e.0
+  Device-1: Intel Celeron/Pentium Silver Processor
+    High Definition Audio vendor: Lenovo
+    driver: snd_hda_intel v: kernel bus-ID: 00:0e.0
   API: ALSA v: k6.14.1-arch1-1 status: kernel-api
   Server-1: sndiod v: N/A status: off
   Server-2: PipeWire v: 1.4.1 status: active
 Network:
-  Device-1: Realtek RTL8852BE PCIe 802.11ax Wireless Network vendor: Lenovo
-    driver: rtw89_8852be v: kernel port: 1000 bus-ID: 03:00.0
+  Device-1: Realtek RTL8852BE PCIe 802.11ax
+    Wireless Network vendor: Lenovo
+    driver: rtw89_8852be v: kernel port: 1000
+    bus-ID: 03:00.0
   IF: wlp3s0 state: up mac: <filter>
-  IF-ID-1: br-63615dd31ca3 state: down mac: <filter>
-  IF-ID-2: br-a76143f9e7bd state: up speed: 10000 Mbps duplex: unknown
+  IF-ID-1: br-63615dd31ca3 state: down
     mac: <filter>
-  IF-ID-3: br-e76bed31d799 state: up speed: 10000 Mbps duplex: unknown
+  IF-ID-2: br-a76143f9e7bd state: up
+    speed: 10000 Mbps duplex: unknown mac: <filter>
+  IF-ID-3: br-e76bed31d799 state: up
+    speed: 10000 Mbps duplex: unknown mac: <filter>
+  IF-ID-4: br-ed3f0d75a166 state: down
     mac: <filter>
-  IF-ID-4: br-ed3f0d75a166 state: down mac: <filter>
   IF-ID-5: docker0 state: down mac: <filter>
-  IF-ID-6: veth1b27660 state: up speed: 10000 Mbps duplex: full
-    mac: <filter>
-  IF-ID-7: veth67cecef state: up speed: 10000 Mbps duplex: full
-    mac: <filter>
-  IF-ID-8: vethf560f2e state: up speed: 10000 Mbps duplex: full
-    mac: <filter>
+  IF-ID-6: veth1b27660 state: up
+    speed: 10000 Mbps duplex: full mac: <filter>
+  IF-ID-7: veth67cecef state: up
+    speed: 10000 Mbps duplex: full mac: <filter>
+  IF-ID-8: vethf560f2e state: up
+    speed: 10000 Mbps duplex: full mac: <filter>
 Bluetooth:
-  Device-1: Realtek Bluetooth Radio driver: btusb v: 0.8 type: USB
-    bus-ID: 1-3:2
-  Report: btmgmt ID: hci0 rfk-id: 9 state: up address: <filter> bt-v: 5.2
-    lmp-v: 11
+  Device-1: Realtek Bluetooth Radio driver: btusb
+    v: 0.8 type: USB bus-ID: 1-3:2
+  Report: btmgmt ID: hci0 rfk-id: 10 state: up
+    address: <filter> bt-v: 5.2 lmp-v: 11
 Drives:
-  Local Storage: total: 116.5 GiB used: 87.68 GiB (75.3%)
-  ID-1: /dev/mmcblk1 model: MMC128 size: 116.5 GiB type: Removable
+  Local Storage: total: 116.5 GiB
+    used: 86.71 GiB (74.4%)
+  ID-1: /dev/mmcblk1 model: MMC128
+    size: 116.5 GiB type: Removable
 Partition:
-  ID-1: / size: 113.62 GiB used: 87.53 GiB (77.0%) fs: ext4
-    dev: /dev/mmcblk1p2
-  ID-2: /boot size: 511 MiB used: 158.3 MiB (31.0%) fs: vfat
+  ID-1: / size: 113.62 GiB used: 86.55 GiB (76.2%)
+    fs: ext4 dev: /dev/mmcblk1p2
+  ID-2: /boot size: 511 MiB
+    used: 158.3 MiB (31.0%) fs: vfat
     dev: /dev/mmcblk1p1
 Swap:
-  ID-1: swap-1 type: file size: 2 GiB used: 13.8 MiB (0.7%) file: /swapfile
-  ID-2: swap-2 type: zram size: 1.69 GiB used: 1.11 GiB (65.8%)
-    dev: /dev/zram0
+  ID-1: swap-1 type: file size: 2 GiB
+    used: 1.2 MiB (0.1%) file: /swapfile
+  ID-2: swap-2 type: zram size: 1.69 GiB
+    used: 598.8 MiB (34.6%) dev: /dev/zram0
 Sensors:
-  System Temperatures: cpu: 43.0 C mobo: N/A
+  System Temperatures: cpu: 41.0 C mobo: N/A
   Fan Speeds (rpm): N/A
 Info:
-  Memory: total: 4 GiB note: est. available: 3.38 GiB used: 2.19 GiB (64.7%)
-  Processes: 225 Uptime: 2d 23h 35m Init: systemd
-  Packages: 1021 Compilers: gcc: 14.2.1 Shell: system-info.sh inxi: 3.3.37
+  Memory: total: 4 GiB note: est.
+    available: 3.38 GiB used: 2.14 GiB (63.3%)
+  Processes: 229 Uptime: 4d 5h 22m Init: systemd
+  Packages: 1017 Compilers: gcc: 14.2.1
+    Shell: system-info.sh inxi: 3.3.37
 
 === Memory Information (free -h) ===
 
                total        used        free      shared  buff/cache   available
-Mem:           3.4Gi       2.2Gi       431Mi       343Mi       1.4Gi       1.2Gi
-Swap:          3.7Gi       1.1Gi       2.6Gi
+Mem:           3.4Gi       2.1Gi       407Mi       390Mi       1.5Gi       1.2Gi
+Swap:          3.7Gi       600Mi       3.1Gi
 
 === Disk Usage (df -h) ===
 
-Filesystem      Size  Used Avail Use% Mounted on
-dev             1.7G     0  1.7G   0% /dev
-run             1.7G  1.6M  1.7G   1% /run
-efivarfs         16E     0 -5.1K   0% /sys/firmware/efi/efivars
-/dev/mmcblk1p2  114G   88G   21G  82% /
-tmpfs           1.7G  528K  1.7G   1% /dev/shm
-tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
-tmpfs           1.7G   13M  1.7G   1% /tmp
-/dev/mmcblk1p1  511M  159M  353M  31% /boot
-tmpfs           1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
-tmpfs           347M  4.1M  343M   2% /run/user/1000
+Filesystem                     Size  Used Avail Use% Mounted on
+dev                            1.7G     0  1.7G   0% /dev
+run                            1.7G  1.6M  1.7G   1% /run
+efivarfs                        16E     0 -5.1K   0% /sys/firmware/efi/efivars
+/dev/mmcblk1p2                 114G   87G   22G  81% /
+tmpfs                          1.7G  528K  1.7G   1% /dev/shm
+tmpfs                          1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs                          1.7G   15M  1.7G   1% /tmp
+/dev/mmcblk1p1                 511M  159M  353M  31% /boot
+tmpfs                          1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs                          347M  4.1M  343M   2% /run/user/1000
+192.168.1.239:/mnt/netstorage   11T  281G   11T   3% /mnt/netstorage
+//192.168.1.68/Shared          111G  106G  4.7G  96% /home/braydenchaffee/mnt/windows-share
+//192.168.1.68/Jellyfin        111G  106G  4.7G  96% /home/braydenchaffee/mnt/TempMedia
 
 === Wayland Session Variables ===
 
