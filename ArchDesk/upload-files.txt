@@ -17,7 +17,6 @@ $HOME/.config/picom/picom.conf
 $HOME/Documents/SystemInfo/pacman-installs.txt
 $HOME/Documents/SystemInfo/installed-packages.log
 $HOME/.gitconfig
-$HOME/.mbsyncrc
 $HOME/.config/mimeapps.list
 $HOME/.config/user-dirs.dirs
 $HOME/.config/gtk-3.0/settings.ini
@@ -25,4 +24,11 @@ DIR:$HOME/Scripts/
 DIR:$HOME/.config/systemd/user/
 DIR:$HOME/.local/bin/
 DIR:$HOME/.config/autostart/
+DIR:$HOME/Scripts/file-mgmt/ 
+DIR:$HOME/.config/nvim/
+$HOME/.config/nvim/lua/plugins/lazy.nvim
+$HOME/.config/nvim/lua/plugins/avante.lua
+DIR:$HOME/.config/nvim/lua/config/
+
+
 
