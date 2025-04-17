@@ -1,0 +1,109 @@
+==== System Info (inxi -Fzx) ====
+System:
+  Kernel: 6.13.8-arch1-1 arch: x86_64 bits: 64 compiler: gcc v: 14.2.1
+  Desktop: Hyprland v: 0.48.1 Distro: Arch Linux
+Machine:
+  Type: Desktop Mobo: Gigabyte model: B550I AORUS PRO AX v: x.x
+    serial: <superuser required> UEFI: American Megatrends LLC. v: FE
+    date: 03/22/2024
+CPU:
+  Info: 8-core model: AMD Ryzen 7 5700X bits: 64 type: MT MCP arch: Zen 3+
+    rev: 2 cache: L1: 512 KiB L2: 4 MiB L3: 32 MiB
+  Speed (MHz): avg: 1740 min/max: 550/4663 boost: enabled cores: 1: 1740
+    2: 1740 3: 1740 4: 1740 5: 1740 6: 1740 7: 1740 8: 1740 9: 1740 10: 1740
+    11: 1740 12: 1740 13: 1740 14: 1740 15: 1740 16: 1740 bogomips: 108597
+  Flags: avx avx2 ht lm nx pae sse sse2 sse3 sse4_1 sse4_2 sse4a ssse3
+Graphics:
+  Device-1: NVIDIA TU116 [GeForce GTX 1650 SUPER] vendor: Gigabyte
+    driver: nvidia v: 570.133.07 arch: Turing bus-ID: 06:00.0
+  Display: wayland server: X.Org v: 24.1.6 with: Xwayland v: 24.1.6
+    compositor: Hyprland v: 0.48.1 driver: gpu: nvidia,nvidia-nvswitch
+    resolution: 2560x1080~60Hz
+  API: EGL v: 1.5 drivers: nouveau,nvidia,swrast platforms:
+    active: gbm,wayland,x11,surfaceless,device inactive: N/A
+  API: OpenGL v: 4.6.0 compat-v: 4.5 vendor: nvidia mesa v: 570.133.07
+    glx-v: 1.4 direct-render: yes renderer: NVIDIA GeForce GTX 1650
+    SUPER/PCIe/SSE2
+  Info: Tools: api: eglinfo,glxinfo gpu: nvidia-settings,nvidia-smi
+    x11: xdpyinfo, xprop, xrandr
+Audio:
+  Device-1: NVIDIA TU116 High Definition Audio vendor: Gigabyte
+    driver: snd_hda_intel v: kernel bus-ID: 06:00.1
+  Device-2: Advanced Micro Devices [AMD] Starship/Matisse HD Audio
+    vendor: Gigabyte driver: snd_hda_intel v: kernel bus-ID: 08:00.4
+  API: ALSA v: k6.13.8-arch1-1 status: kernel-api
+  Server-1: sndiod v: N/A status: off
+  Server-2: JACK v: 1.9.22 status: off
+  Server-3: PipeWire v: 1.4.2 status: active
+Network:
+  Device-1: Realtek RTL8125 2.5GbE vendor: Gigabyte driver: r8169 v: kernel
+    port: e000 bus-ID: 04:00.0
+  IF: eno1 state: up speed: 1000 Mbps duplex: full mac: <filter>
+  Device-2: Realtek RTL8852CE PCIe 802.11ax Wireless Network
+    driver: rtw89_8852ce v: kernel port: d000 bus-ID: 05:00.0
+  IF: wlp5s0 state: up mac: <filter>
+  IF-ID-1: br-17182bef1cf1 state: down mac: <filter>
+  IF-ID-2: br-39c8e4bdf723 state: down mac: <filter>
+  IF-ID-3: br-ae347f31d9a4 state: down mac: <filter>
+  IF-ID-4: br-ba7880d23fad state: up speed: 10000 Mbps duplex: unknown
+    mac: <filter>
+  IF-ID-5: br-bc3b2e3a73b4 state: down mac: <filter>
+  IF-ID-6: br-bdd1c454bcc2 state: down mac: <filter>
+  IF-ID-7: br-bf4e45ee4582 state: down mac: <filter>
+  IF-ID-8: br-c966073c9316 state: down mac: <filter>
+  IF-ID-9: br-d3066f5efab7 state: up speed: 10000 Mbps duplex: unknown
+    mac: <filter>
+  IF-ID-10: br-f51b57d8be93 state: up speed: 10000 Mbps duplex: unknown
+    mac: <filter>
+  IF-ID-11: docker0 state: down mac: <filter>
+  IF-ID-12: veth3c3205a state: up speed: 10000 Mbps duplex: full
+    mac: <filter>
+  IF-ID-13: veth4d621ed state: up speed: 10000 Mbps duplex: full
+    mac: <filter>
+  IF-ID-14: veth6cb2223 state: up speed: 10000 Mbps duplex: full
+    mac: <filter>
+  IF-ID-15: veth8d0f49a state: up speed: 10000 Mbps duplex: full
+    mac: <filter>
+Bluetooth:
+  Device-1: Realtek Bluetooth Radio driver: btusb v: 0.8 type: USB
+    bus-ID: 1-8:3
+  Report: btmgmt ID: hci0 rfk-id: 0 state: up address: <filter> bt-v: 5.3
+    lmp-v: 12
+Drives:
+  Local Storage: total: 11.82 TiB used: 850.45 GiB (7.0%)
+  ID-1: /dev/nvme0n1 vendor: Samsung model: SSD 990 EVO Plus 1TB
+    size: 931.51 GiB temp: 42.9 C
+  ID-2: /dev/sda vendor: Seagate model: ST12000VN0007-2GS116 size: 10.91 TiB
+Partition:
+  ID-1: / size: 915.32 GiB used: 574.5 GiB (62.8%) fs: ext4
+    dev: /dev/nvme0n1p2
+Swap:
+  Alert: No swap data was found.
+Sensors:
+  System Temperatures: cpu: 44.4 C mobo: 35.0 C
+  Fan Speeds (rpm): N/A
+Info:
+  Memory: total: 32 GiB available: 31.26 GiB used: 9.15 GiB (29.3%)
+  Processes: 471 Uptime: 10d 9h 4m Init: systemd
+  Packages: 914 Compilers: clang: 19.1.7 gcc: 14.2.1 Shell: upload-sysfiles
+    inxi: 3.3.37
+==== Memory Info (free -h) ====
+               total        used        free      shared  buff/cache   available
+Mem:            31Gi       9.2Gi       1.9Gi        90Mi        21Gi        22Gi
+Swap:             0B          0B          0B
+==== Disk Usage (df -h) ====
+Filesystem             Size  Used Avail Use% Mounted on
+dev                     16G     0   16G   0% /dev
+run                     16G  1.8M   16G   1% /run
+efivarfs               128K   15K  109K  12% /sys/firmware/efi/efivars
+/dev/nvme0n1p2         916G  575G  295G  67% /
+tmpfs                   16G  536K   16G   1% /dev/shm
+tmpfs                   16G   12M   16G   1% /tmp
+tmpfs                  1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+/dev/sda1               11T  276G   11T   3% /mnt/netstorage
+//192.168.1.68/Shared  111G   15G   97G  14% /home/braydenchaffee/mnt/windows-share
+tmpfs                  1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs                  3.2G   11M  3.2G   1% /run/user/1000
+==== Wayland Variables ====
+WAYLAND_DISPLAY=wayland-1
+MOZ_ENABLE_WAYLAND=1
