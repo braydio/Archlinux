@@ -5,7 +5,6 @@
 [31mFile or directory not found: /home/braydenchaffee/.config/msmtmp/msmtmprc[0m
 [31mFile or directory not found: /home/braydenchaffee/.config/picom/picom.conf[0m
 [31mFile or directory not found: /home/braydenchaffee/Documents/SystemInfo/installed-packages.log[0m
-[31mFile or directory not found: /home/braydenchaffee/.mbsyncrc[0m
 [31mFile or directory not found: /home/braydenchaffee/.config/mimeapps.list[0m
 [31mFile or directory not found: /home/braydenchaffee/.config/gtk-3.0/settings.ini[0m
 [31mFile or directory not found: DIR:/home/braydenchaffee/Scripts/[0m
@@ -13,3 +12,5 @@
 [31mFile or directory not found: DIR:/home/braydenchaffee/.local/bin/[0m
 [31mFile or directory not found: DIR:/home/braydenchaffee/.config/autostart/[0m
 [31mFile or directory not found: DIR:/home/braydenchaffee/Scripts/file-mgmt/[0m
+[31mFile or directory not found: DIR:/home/braydenchaffee/.config/nvim/[0m
+[31mFile or directory not found: DIR:/home/braydenchaffee/.config/nvim/lua/config/[0m

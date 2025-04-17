@@ -42,27 +42,21 @@ Network:
   Device-2: Realtek RTL8852CE PCIe 802.11ax Wireless Network
     driver: rtw89_8852ce v: kernel port: d000 bus-ID: 05:00.0
   IF: wlp5s0 state: up mac: <filter>
-  IF-ID-1: br-17182bef1cf1 state: down mac: <filter>
-  IF-ID-2: br-39c8e4bdf723 state: down mac: <filter>
-  IF-ID-3: br-ae347f31d9a4 state: down mac: <filter>
-  IF-ID-4: br-ba7880d23fad state: up speed: 10000 Mbps duplex: unknown
+  IF-ID-1: br-ba7880d23fad state: up speed: 10000 Mbps duplex: unknown
     mac: <filter>
-  IF-ID-5: br-bc3b2e3a73b4 state: down mac: <filter>
-  IF-ID-6: br-bdd1c454bcc2 state: down mac: <filter>
-  IF-ID-7: br-bf4e45ee4582 state: down mac: <filter>
-  IF-ID-8: br-c966073c9316 state: down mac: <filter>
-  IF-ID-9: br-d3066f5efab7 state: up speed: 10000 Mbps duplex: unknown
+  IF-ID-2: br-c966073c9316 state: up speed: 10000 Mbps duplex: unknown
     mac: <filter>
-  IF-ID-10: br-f51b57d8be93 state: up speed: 10000 Mbps duplex: unknown
+  IF-ID-3: br-d3066f5efab7 state: down mac: <filter>
+  IF-ID-4: br-f51b57d8be93 state: up speed: 10000 Mbps duplex: unknown
     mac: <filter>
-  IF-ID-11: docker0 state: down mac: <filter>
-  IF-ID-12: veth3c3205a state: up speed: 10000 Mbps duplex: full
+  IF-ID-5: docker0 state: down mac: <filter>
+  IF-ID-6: veth683d772 state: up speed: 10000 Mbps duplex: full
     mac: <filter>
-  IF-ID-13: veth4d621ed state: up speed: 10000 Mbps duplex: full
+  IF-ID-7: veth6cb2223 state: up speed: 10000 Mbps duplex: full
     mac: <filter>
-  IF-ID-14: veth6cb2223 state: up speed: 10000 Mbps duplex: full
+  IF-ID-8: veth8d0f49a state: up speed: 10000 Mbps duplex: full
     mac: <filter>
-  IF-ID-15: veth8d0f49a state: up speed: 10000 Mbps duplex: full
+  IF-ID-9: vethb8eb1ff state: up speed: 10000 Mbps duplex: full
     mac: <filter>
 Bluetooth:
   Device-1: Realtek Bluetooth Radio driver: btusb v: 0.8 type: USB
@@ -70,35 +64,35 @@ Bluetooth:
   Report: btmgmt ID: hci0 rfk-id: 0 state: up address: <filter> bt-v: 5.3
     lmp-v: 12
 Drives:
-  Local Storage: total: 11.82 TiB used: 850.45 GiB (7.0%)
+  Local Storage: total: 11.82 TiB used: 525.04 GiB (4.3%)
   ID-1: /dev/nvme0n1 vendor: Samsung model: SSD 990 EVO Plus 1TB
-    size: 931.51 GiB temp: 42.9 C
+    size: 931.51 GiB temp: 44.9 C
   ID-2: /dev/sda vendor: Seagate model: ST12000VN0007-2GS116 size: 10.91 TiB
 Partition:
-  ID-1: / size: 915.32 GiB used: 574.5 GiB (62.8%) fs: ext4
+  ID-1: / size: 915.32 GiB used: 249.68 GiB (27.3%) fs: ext4
     dev: /dev/nvme0n1p2
 Swap:
   Alert: No swap data was found.
 Sensors:
-  System Temperatures: cpu: 44.4 C mobo: 35.0 C
+  System Temperatures: cpu: 55.4 C mobo: 37.0 C
   Fan Speeds (rpm): N/A
 Info:
-  Memory: total: 32 GiB available: 31.26 GiB used: 9.15 GiB (29.3%)
-  Processes: 471 Uptime: 10d 9h 4m Init: systemd
-  Packages: 914 Compilers: clang: 19.1.7 gcc: 14.2.1 Shell: upload-sysfiles
+  Memory: total: 32 GiB available: 31.26 GiB used: 5.66 GiB (18.1%)
+  Processes: 424 Uptime: 10d 20h 0m Init: systemd
+  Packages: 910 Compilers: clang: 19.1.7 gcc: 14.2.1 Shell: upload-sysfiles
     inxi: 3.3.37
 ==== Memory Info (free -h) ====
                total        used        free      shared  buff/cache   available
-Mem:            31Gi       9.2Gi       1.9Gi        90Mi        21Gi        22Gi
+Mem:            31Gi       5.7Gi       9.8Gi        85Mi        16Gi        25Gi
 Swap:             0B          0B          0B
 ==== Disk Usage (df -h) ====
 Filesystem             Size  Used Avail Use% Mounted on
 dev                     16G     0   16G   0% /dev
-run                     16G  1.8M   16G   1% /run
+run                     16G  1.7M   16G   1% /run
 efivarfs               128K   15K  109K  12% /sys/firmware/efi/efivars
-/dev/nvme0n1p2         916G  575G  295G  67% /
-tmpfs                   16G  536K   16G   1% /dev/shm
-tmpfs                   16G   12M   16G   1% /tmp
+/dev/nvme0n1p2         916G  250G  620G  29% /
+tmpfs                   16G  408K   16G   1% /dev/shm
+tmpfs                   16G   14M   16G   1% /tmp
 tmpfs                  1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
 /dev/sda1               11T  276G   11T   3% /mnt/netstorage
 //192.168.1.68/Shared  111G   15G   97G  14% /home/braydenchaffee/mnt/windows-share

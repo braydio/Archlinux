@@ -12,6 +12,7 @@ chrome-remote-desktop
 clang
 cmake
 cockpit
+cockpit-files
 cronie
 ctop
 cuda
@@ -84,7 +85,6 @@ python-requests
 qbittorrent-nox
 qt6-tools
 reflector
-remote-desktop-manager
 ripcord
 rsync
 rustdesk-bin
@@ -114,7 +114,6 @@ waybar
 waynergy
 wayvnc
 wget
-whisparr-nightly-bin
 wireguard-tools
 wl-clipboard
 wlroots
